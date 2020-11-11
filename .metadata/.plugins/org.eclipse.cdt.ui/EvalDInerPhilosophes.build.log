@@ -1,0 +1,20 @@
+23:51:06 **** Build of configuration Debug for project EvalDInerPhilosophes ****
+make all 
+Building file: ../src/EvalDInerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/EvalDInerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EvalDInerPhilosophes.d" -MT"src/EvalDInerPhilosophes.o" -o "src/EvalDInerPhilosophes.o" "../src/EvalDInerPhilosophes.cpp"
+Finished building: ../src/EvalDInerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/EvalDInerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: EvalDInerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "EvalDInerPhilosophes"  ./src/EvalDInerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: EvalDInerPhilosophes
+ 
+
+23:51:23 Build Finished. 0 errors, 0 warnings. (took 17s.8ms)
+
