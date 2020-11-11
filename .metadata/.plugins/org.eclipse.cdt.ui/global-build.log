@@ -1,17 +1,13 @@
-23:51:00 **** Clean-only build of configuration Debug for project EvalDInerPhilosophes ****
-make clean 
-rm -rf  ./src/EvalDInerPhilosophes.o ./src/SolutionEtudiant.o  ./src/EvalDInerPhilosophes.d ./src/SolutionEtudiant.d  EvalDInerPhilosophes
- 
-23:51:06 **** Build of configuration Debug for project EvalDInerPhilosophes ****
+00:27:03 **** Build of configuration Debug for project EvalDInerPhilosophes ****
 make all 
 Building file: ../src/EvalDInerPhilosophes.cpp
 Invoking: GCC C++ Compiler
-g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/EvalDInerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EvalDInerPhilosophes.d" -MT"src/EvalDInerPhilosophes.o" -o "src/EvalDInerPhilosophes.o" "../src/EvalDInerPhilosophes.cpp"
+g++ -pthread -I"/home/bultot/eclipse-workspace/EvalDInerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/EvalDInerPhilosophes.d" -MT"src/EvalDInerPhilosophes.o" -o "src/EvalDInerPhilosophes.o" "../src/EvalDInerPhilosophes.cpp"
 Finished building: ../src/EvalDInerPhilosophes.cpp
  
 Building file: ../src/SolutionEtudiant.cpp
 Invoking: GCC C++ Compiler
-g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/EvalDInerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+g++ -pthread -I"/home/bultot/eclipse-workspace/EvalDInerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
 Finished building: ../src/SolutionEtudiant.cpp
  
 Building target: EvalDInerPhilosophes
