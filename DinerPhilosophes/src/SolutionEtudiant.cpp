@@ -51,10 +51,28 @@ void initialisation()
 	pthread_mutex_init(&mutexEtats, &pthread_attr_Etats);
 	instantDebut = time(NULL);
 #ifdef SOLUTION_1
-	pthread_create(&Sol1_threadScheduler, &pthread_attr_Sol1Scheduler, sol1_Master_Scheduler, NULL);
-	sem_init( &semGroupe1, 0, 0); //Pris par defaut
-	sem_init( &semGroupe2, 0, 0); //Pris par defaut
-	sem_init( &semSynchroThreadsPhilos, 0, 0);//Pris par defaut
+	if( pthread_create(&Sol1_threadScheduler, &pthread_attr_Sol1Scheduler, sol1_Master_Scheduler, NULL)==0)
+		std::cout << "[INFO] Thread Sol1_threadScheduler created" << std::endl;
+	else
+		std::cout << "[WARNING] Thread Sol1_threadScheduler not created " << std::endl;
+
+	if( sem_init( &semGroupe1, 0, 0) == 0)//Fourchettes lachees par defaut
+		std::cout << "[INFO] semaphore Groupe1 initialized" << std::endl;
+	else
+		std::cout << "[WARNING] semaphore Groupe1 not initialized " << std::endl;
+
+	if( sem_init( &semGroupe2, 0, 0) == 0)//Fourchettes lachees par defaut
+		std::cout << "[INFO] semaphore Groupe2 initialized" << std::endl;
+	else
+		std::cout << "[WARNING] semaphore Groupe2 not initialized " << std::endl;
+
+
+	if( sem_init( &semSynchroThreadsPhilos, 0, 0) == 0)//Fourchettes lachees par defaut
+		std::cout << "[INFO] semaphore semSynchroThreadsPhilos initialized" << std::endl;
+	else
+		std::cout << "[WARNING] semaphore semSynchroThreadsPhilos not initialized " << std::endl;
+
+
 #endif
 
 
@@ -62,12 +80,18 @@ void initialisation()
 	for(int i=0;i<NB_PHILOSOPHES;i++)
 	{
 		semFourchettes[i] = (sem_t*)malloc(sizeof(sem_t));
-		sem_init( semFourchettes[i], 0, 1);//Fourchettes lachees par defaut
+		if( sem_init( semFourchettes[i], 0, 1) == 0)//Fourchettes lachees par defaut
+			std::cout << "[INFO] semaphore Fourchette " <<i<<" initialized" << std::endl;
+		else
+			std::cout << "[WARNING] semaphore Fourchette " <<i<<" not initialized " << std::endl;
 		//TODO : changer l'idx et utiliser des objets du noyaux
 		t_idx_philos[i] = i;
-		err = pthread_create( &threadsPhilosophes[i], &(pthread_attr_philosophes[i]), vieDuPhilosophe, &(t_idx_philos[i]));
-		if(err != 0)
-			std::cout<<"erreur"<<std::endl;
+
+
+		if(pthread_create( &threadsPhilosophes[i], &(pthread_attr_philosophes[i]), vieDuPhilosophe, &(t_idx_philos[i])) == 0)
+			std::cout<<"[INFO] Thread philosophe " <<i<< " created"<<std::endl;
+		else
+			std::cout<<"[WARNING] Thread philosophe " <<i<< " not created"<<std::endl;
 
 		//usleep(10);
 	}
@@ -168,11 +192,10 @@ void* sol1_Master_Scheduler(void* args)
 		sem_getvalue(&semGroupe1, &etat_sema);
 		if(etat_sema == 1)
 		{
-			sem_wait(&semGroupe1);
-			std::cout<<"prise semaphore"<<std::endl;
+			sem_post(&semGroupe1);
 		}
 		tousFiniDeManger = false;
-		while(tousFiniDeManger == false) //Attends que tous les paires aient mangé
+		while(tousFiniDeManger == false) //Attends que tous les impaires aient mangé
 		{
 			//std::cout<<"uiui"<<std::endl;
 			tousFiniDeManger = true;
@@ -185,8 +208,14 @@ void* sol1_Master_Scheduler(void* args)
 				}
 			}
 		}
+		//tous les impaires ont mangé rebloquer leur semaphore
+		sem_getvalue(&semGroupe1, &etat_sema);
+		//std::cout<<etat_sema<<std::endl;
+		if(etat_sema == 1)
+			sem_wait(&semGroupe1);
+
 		tousFaim=false;
-		//std::cout<<"groupe2 fini de manger"<<std::endl;
+		std::cout<<"groupe1 fini de manger"<<std::endl;
 		while(tousFaim == false) //Attends que tous les paires aient faim
 		{
 			tousFaim = true;
@@ -198,16 +227,11 @@ void* sol1_Master_Scheduler(void* args)
 				}
 			}
 		}
+		std::cout<<"groupe2 tous faim"<<std::endl;
 
-		//std::cout<<"groupe1 tous faim"<<std::endl;
 
-		//tous les paires ont mangé rebloquer leur semaphore
-		sem_getvalue(&semGroupe2, &etat_sema);
-		//std::cout<<etat_sema<<std::endl;
-		if(etat_sema == 1)
-			sem_wait(&semGroupe2);
-		//faire manger les impaires
-		sem_post(&semGroupe1);
+		//faire manger les paires
+		sem_post(&semGroupe2);
 		while(tousFiniDeManger == false) //Attends que tous les impaires aient mangé
 		{
 			tousFiniDeManger = true;
@@ -315,7 +339,6 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
     pthread_mutex_unlock(&mutexEtats);
 
     pthread_mutex_lock(&mutexCout);
-    //std::cout << "oui" <<std::endl;
     
     for (int i=0;i<NB_PHILOSOPHES;i++) {
         if (i==idPhilosopheChangeant)
@@ -339,18 +362,39 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 void terminerProgramme()
 {
     int i;
+    int sem_value;
+    sem_close(&semSynchroThreadsPhilos);
+	sem_close(&semGroupe1);
+	sem_close(&semGroupe2);
+
+	pthread_cancel(Sol1_threadScheduler);
     for(i=0;i<NB_PHILOSOPHES;i++)
     {
-    	pthread_cancel(threadsPhilosophes[i]);
-    	pthread_cancel(Sol1_threadScheduler);
-    	//std::cout << pthread_philosophes[i] <<std::endl;
-    	pthread_join(threadsPhilosophes[i], NULL);
-    	pthread_join(Sol1_threadScheduler, NULL);
-    	sem_close(semFourchettes[i]);
-    	sem_close(&semGroupe1);
-    	sem_close(&semGroupe2);
-    	//sem_unlink(semFourchettes[i]);
+    	if(pthread_cancel(threadsPhilosophes[i]) == 0)
+			std::cout << "[INFO] thread philosophe " << i << " canceled successfull"<<std::endl;
+		else
+			std::cout << "[WARNING] thread philosophe " << i << " error during cancel() "<<std::endl;
+
+    	if(pthread_join(threadsPhilosophes[i], NULL) == 0)
+    		std::cout << "[INFO] thread philosophe " << i << " join() correctly"<<std::endl;
+    	else
+    		std::cout << "[WARNING] thread philosophe " << i << " error during join() "<<std::endl;
+    	sem_getvalue(&sem_t_fourchettes[i], &sem_value);
+    	if( sem_value == 0)
+    	{
+    		std::cout << "[INFO] Semaphore fourchette " << i << "not posted" << std::endl;
+    		sem_post(&sem_t_fourchettes[i]);
+    	}
+
+    	if(sem_close(semFourchettes[i]) == 0)
+    		std::cout << "[INFO] semaphore fourchette " << i << " close correctly"<<std::endl;
+    	else
+    		std::cout << "[WARNING] semaphore fourchette " << i << " error during close() "<<std::endl;
+
+
     }
+
+	pthread_join(Sol1_threadScheduler, NULL);
     free(threadsPhilosophes);
     free(semFourchettes);
     free(etatsPhilosophes);
