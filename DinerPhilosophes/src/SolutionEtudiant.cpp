@@ -190,11 +190,12 @@ void* sol1_Master_Scheduler(void* args)
 	while(1)
 	{
 		sem_getvalue(&semGroupe1, &etat_sema);
-		if(etat_sema == 1)
+		if(etat_sema == 1)//Si semaphore est pris
 		{
-			sem_post(&semGroupe1);
+			sem_post(&semGroupe1);//Lachage du semaphore pour faire manger le groupe 1
 		}
 		tousFiniDeManger = false;
+		std::cout << "[DEBUG] Le groupe 1 peut manger" <<std::endl;
 		while(tousFiniDeManger == false) //Attends que tous les impaires aient mangé
 		{
 			//std::cout<<"uiui"<<std::endl;
@@ -208,11 +209,13 @@ void* sol1_Master_Scheduler(void* args)
 				}
 			}
 		}
+		std::cout << "[DEBUG] Le groupe 1 a fini de manger" <<std::endl;
 		//tous les impaires ont mangé rebloquer leur semaphore
-		sem_getvalue(&semGroupe1, &etat_sema);
-		//std::cout<<etat_sema<<std::endl;
-		if(etat_sema == 1)
-			sem_wait(&semGroupe1);
+
+		sem_wait(&semGroupe1);
+
+
+		std::cout << "[DEBUG] Semaphore groupe 1 PRIS" <<std::endl;
 
 		tousFaim=false;
 		std::cout<<"groupe1 fini de manger"<<std::endl;
@@ -295,7 +298,7 @@ void ViePhilosopheSolution1(int id)
 
 	actualiserEtAfficherEtatsPhilosophes(id,P_FAIM);
 
-	std::cout<< "philo" << id << "peut manger" <<std::endl;
+	//std::cout<< "philo" << id << "peut manger" <<std::endl;
 	if(id%2)
 	{
 		while(value_sema == 0)

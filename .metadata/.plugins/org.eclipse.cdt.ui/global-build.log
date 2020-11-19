@@ -1,19 +1,4 @@
-17:11:36 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
-make all 
-Building file: ../src/SolutionEtudiant.cpp
-Invoking: GCC C++ Compiler
-g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
-../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
-../src/SolutionEtudiant.cpp:70:6: error: ‘ssem_init’ was not declared in this scope; did you mean ‘sem_init’?
-   70 |  if( ssem_init( &semSynchroThreadsPhilos, 0, 0) == 0)//Fourchettes lachees par defaut
-      |      ^~~~~~~~~
-      |      sem_init
-../src/SolutionEtudiant.cpp:41:6: warning: unused variable ‘err’ [-Wunused-variable]
-   41 |  int err = 0;
-      |      ^~~
-make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
-"make all" terminated with exit code 2. Build might be incomplete.
-17:11:50 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+17:16:21 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
 make all 
 Building file: ../src/SolutionEtudiant.cpp
 Invoking: GCC C++ Compiler
