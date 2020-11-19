@@ -11,45 +11,85 @@
 #ifdef SOLUTION_ETUDIANT
 
 
-typedef enum
-{
-	E_Faim = 0,
-	E_Mange = 1,
-	E_Pense = 2
-}T_statePhilo;
+void ViePhilosopheSolutionBasique(int id);
+void ViePhilosopheSolution1(int id);
+void ViePhilosopheSolution2(int id);
 
-//int [N_PHILOSOPHES];
 
+#ifdef SOLUTION_1
+pthread_attr_t pthread_attr_Sol1Scheduler;
+pthread_t Sol1_threadScheduler;
+sem_t semGroupe1; //Sem pour philos impaires
+sem_t semGroupe2; //Sem pour philos paires
+sem_t semSynchroThreadsPhilos; //Sem pour la synchro de début (attendre qu'ils soient tous démarrés)
+void* sol1_Master_Scheduler(void* args);
+
+#endif
 
 sem_t sem_t_fourchettes[NB_PHILOSOPHES-1];
 pthread_attr_t pthread_attr_philosophes[NB_PHILOSOPHES];
+
+
 pthread_mutexattr_t pthread_attr_Cout;
 pthread_mutexattr_t pthread_attr_Etats;
-
+int * t_idx_philos;
 //pthread_t pthread_philosophes[NB_PHILOSOPHES];
 
 void initialisation()
 {
 	//semFourchettes = malloc(NB_PHILOSOPHES * sizeof(sem_t*));
+	int err = 0;
 	threadsPhilosophes = (pthread_t*)malloc(NB_PHILOSOPHES * sizeof(pthread_t));
 	semFourchettes = (sem_t**)malloc(NB_PHILOSOPHES * sizeof(sem_t*));
 	etatsPhilosophes = (char*)malloc(NB_PHILOSOPHES * sizeof(char));
-	#ifdef SOLUTION_1
+	t_idx_philos = (int*)malloc(NB_PHILOSOPHES *sizeof(int));
+
 	mutexCout = PTHREAD_MUTEX_INITIALIZER;
 	mutexEtats = PTHREAD_MUTEX_INITIALIZER;
+
 	pthread_mutex_init(&mutexCout, &pthread_attr_Cout);
 	pthread_mutex_init(&mutexEtats, &pthread_attr_Etats);
 	instantDebut = time(NULL);
+#ifdef SOLUTION_1
+	pthread_create(&Sol1_threadScheduler, &pthread_attr_Sol1Scheduler, sol1_Master_Scheduler, NULL);
+	sem_init( &semGroupe1, 0, 0); //Pris par defaut
+	sem_init( &semGroupe2, 0, 0); //Pris par defaut
+	sem_init( &semSynchroThreadsPhilos, 0, 0);//Pris par defaut
+#endif
+
+
+	usleep(100);
 	for(int i=0;i<NB_PHILOSOPHES;i++)
 	{
 		semFourchettes[i] = (sem_t*)malloc(sizeof(sem_t));
-		//sem
-		//sem_init( semFourchettes[i], 0, 1);
-		sem_init( semFourchettes[i], 0, 1);
-		pthread_create( &threadsPhilosophes[i], &(pthread_attr_philosophes[i]), vieDuPhilosophe, &i);
+		sem_init( semFourchettes[i], 0, 1);//Fourchettes lachees par defaut
+		//TODO : changer l'idx et utiliser des objets du noyaux
+		t_idx_philos[i] = i;
+		err = pthread_create( &threadsPhilosophes[i], &(pthread_attr_philosophes[i]), vieDuPhilosophe, &(t_idx_philos[i]));
+		if(err != 0)
+			std::cout<<"erreur"<<std::endl;
 
-		usleep(10);
+		//usleep(10);
 	}
+
+
+
+	#ifdef SOLUTION_1
+	bool TousFaim = false;
+
+	while(TousFaim==false)
+	{
+		TousFaim=true;
+		for(int i = 0;i<NB_PHILOSOPHES;i++)
+		{
+			if(etatsPhilosophes[i] != P_FAIM)
+			{
+				TousFaim = false;
+			}
+		}
+
+	}
+	sem_post(&semSynchroThreadsPhilos);
 
 
 	#endif
@@ -58,6 +98,7 @@ void initialisation()
 
 
 	#endif
+
 	#ifdef SOLUTION_3
 
 
@@ -75,18 +116,21 @@ void randomDelay(float f_min_Sec, float f_max_Sec)
 	if( (float)random < (f_min_Sec*1000000))
 		random = int(f_min_Sec*1000000);
 	usleep(random);
-
-/*	if(random > f_max_Sec)
-		random = f_max_Sec;
-
-*/
 }
 
 
 void* vieDuPhilosophe(void* idPtr)
 {
-    int id = * ((int*)idPtr);
-    T_statePhilo statePhilo = E_Pense;
+	// ***** À implémenter : *****
+    // - structure permettant le contrôle du philosphe
+    // - prise/relâchement des fourchettes de gauche et de droite, au bon moment
+    // - ordres de changement d'état et d'actualisation de l'affichage dans la foulée
+    //     (grâce à : void actualiserEtAfficherEtatsPhilosophes(int, char))
+    // - simulation des actions "manger" et "penser" par des appels à usleep(...)
+
+	int id = * ((int*)idPtr);
+    std::cout << id<< std::endl;
+    //T_statePhilo statePhilo = E_Pense;
     // Configuration du thread : il sera annulable à partir de n'importe quel point de préemption
     // (appel bloquant, appel système, etc...)
     pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
@@ -94,56 +138,170 @@ void* vieDuPhilosophe(void* idPtr)
     
     while(1)
     {
-        //std::cout << "thread : " << id << std::endl;
+#ifdef SOLUTION_BASE
+    	ViePhilosopheSolutionBasique(id);
+#endif
+#ifdef SOLUTION_1
+    	ViePhilosopheSolution1(id);
+#endif
+#ifdef SOLUTION_2
+    	ViePhilosopheSolution2(id);
+#endif
 
-        switch(statePhilo)
-        {
-    	case E_Faim:
-
-
-    		actualiserEtAfficherEtatsPhilosophes(id,'F');
-    		sem_wait(semFourchettes[id]); //Acquisition fourchette gauche
-    		//usleep(10);
-    		sem_wait(semFourchettes[ (id+1)%NB_PHILOSOPHES]); //Acquisition fourchette droite
-    		sem_post(semFourchettes[id]); //Relâchement fourchette gauche
-    		sem_post(semFourchettes[(id+1)%NB_PHILOSOPHES]); //Relâchement fourchette droite
-    		statePhilo = E_Mange;
-    		break;
-
-    	case E_Mange:
-    		actualiserEtAfficherEtatsPhilosophes(id,'M');
-    		randomDelay(0,DUREE_MANGE_MAX_S);
-    		statePhilo = E_Pense;
-    		break;
-    	case E_Pense:
-    		actualiserEtAfficherEtatsPhilosophes(id,'P');
-    		randomDelay(0,DUREE_PENSE_MAX_S);
-    		statePhilo = E_Faim;
-    		break;
-        }
-
-
-
-
-
-        // ***** À implémenter : *****
-        // - structure permettant le contrôle du philosphe
-        // - prise/relâchement des fourchettes de gauche et de droite, au bon moment
-        // - ordres de changement d'état et d'actualisation de l'affichage dans la foulée
-        //     (grâce à : void actualiserEtAfficherEtatsPhilosophes(int, char))
-        // - simulation des actions "manger" et "penser" par des appels à usleep(...)
-        
-        
-        
-        
         pthread_testcancel();
         //TODO pthread_testcancel(); // point où l'annulation du thread est permise
     }
-    
     return NULL;
 }
 
+void* sol1_Master_Scheduler(void* args)
+{
+	std::cout << "oui"<<std::endl;
+	bool tousFaim = false;
+	bool tousFiniDeManger = false;
+	int etat_sema;
 
+    pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
+    pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
+	while(1)
+	{
+		sem_getvalue(&semGroupe1, &etat_sema);
+		if(etat_sema == 1)
+		{
+			sem_wait(&semGroupe1);
+			std::cout<<"prise semaphore"<<std::endl;
+		}
+		tousFiniDeManger = false;
+		while(tousFiniDeManger == false) //Attends que tous les paires aient mangé
+		{
+			//std::cout<<"uiui"<<std::endl;
+			tousFiniDeManger = true;
+			for(int i = 1; i<NB_PHILOSOPHES;i+=2)
+			{
+				if(etatsPhilosophes[i] == P_MANGE)
+				{
+					tousFiniDeManger = false;
+					//std::cout << "pas fini de manger" <<std::endl;
+				}
+			}
+		}
+		tousFaim=false;
+		//std::cout<<"groupe2 fini de manger"<<std::endl;
+		while(tousFaim == false) //Attends que tous les paires aient faim
+		{
+			tousFaim = true;
+			for(int i = 0; i<NB_PHILOSOPHES;i+=2)
+			{
+				if(etatsPhilosophes[i] != P_FAIM)
+				{
+					tousFiniDeManger = false;
+				}
+			}
+		}
+
+		//std::cout<<"groupe1 tous faim"<<std::endl;
+
+		//tous les paires ont mangé rebloquer leur semaphore
+		sem_getvalue(&semGroupe2, &etat_sema);
+		//std::cout<<etat_sema<<std::endl;
+		if(etat_sema == 1)
+			sem_wait(&semGroupe2);
+		//faire manger les impaires
+		sem_post(&semGroupe1);
+		while(tousFiniDeManger == false) //Attends que tous les impaires aient mangé
+		{
+			tousFiniDeManger = true;
+			for(int i = 1; i<NB_PHILOSOPHES;i+=2)
+			{
+				if(etatsPhilosophes[i] == P_MANGE)
+				{
+					tousFiniDeManger = false;
+				}
+			}
+		}
+
+
+		while(tousFaim == false) //Attends que tous les paires aient faim
+		{
+			tousFaim = true;
+			for(int i = 0; i<NB_PHILOSOPHES;i+=2)
+			{
+				if(etatsPhilosophes[i] != P_FAIM)
+				{
+					tousFiniDeManger = false;
+				}
+			}
+		}
+		//tous les paires ont mangé rebloquer leur semaphore
+		sem_wait(&semGroupe1);
+		//faire manger les paires
+		sem_post(&semGroupe2);
+
+		//groupe 2 peut manger
+
+        pthread_testcancel();
+	}
+}
+
+void ViePhilosopheSolutionBasique(int id)
+{
+	etatsPhilosophes[id] = 'F';
+	actualiserEtAfficherEtatsPhilosophes(id,etatsPhilosophes[id]);
+	sem_wait(semFourchettes[id]); //Acquisition fourchette gauche
+	//usleep(10);
+	sem_wait(semFourchettes[ (id+1)%NB_PHILOSOPHES]); //Acquisition fourchette droite
+
+	etatsPhilosophes[id] = 'M';
+	actualiserEtAfficherEtatsPhilosophes(id,etatsPhilosophes[id]);
+	randomDelay(0,DUREE_MANGE_MAX_S);
+	sem_post(semFourchettes[id]); //Relâchement fourchette gauche
+	sem_post(semFourchettes[(id+1)%NB_PHILOSOPHES]); //Relâchement fourchette droite
+
+	etatsPhilosophes[id] = 'P';
+	actualiserEtAfficherEtatsPhilosophes(id,etatsPhilosophes[id]);
+	randomDelay(0,DUREE_PENSE_MAX_S);
+}
+
+void ViePhilosopheSolution1(int id)
+{
+	int value_sema = 0;
+	etatsPhilosophes[id] = P_FAIM;
+	while(value_sema == 0)//Tant que le semaphore est pris
+			sem_getvalue(&semSynchroThreadsPhilos, &value_sema);
+
+	actualiserEtAfficherEtatsPhilosophes(id,P_FAIM);
+
+	std::cout<< "philo" << id << "peut manger" <<std::endl;
+	if(id%2)
+	{
+		while(value_sema == 0)
+				sem_getvalue(&semGroupe1, &value_sema);
+		//std::cout<<"sema1"<<value_sema<<std::endl;
+	}
+	else
+	{
+
+		while(value_sema == 0)
+				sem_getvalue(&semGroupe2, &value_sema);
+		//std::cout<<"sema2"<<value_sema<<std::endl;
+	}
+	sem_wait(semFourchettes[id]); //Acquisition fourchette gauche
+	//usleep(10);
+	sem_wait(semFourchettes[ (id+1)%NB_PHILOSOPHES]); //Acquisition fourchette droite
+
+	actualiserEtAfficherEtatsPhilosophes(id,P_MANGE);
+	randomDelay(0,DUREE_MANGE_MAX_S);
+	sem_post(semFourchettes[id]); //Relâchement fourchette gauche
+	sem_post(semFourchettes[(id+1)%NB_PHILOSOPHES]); //Relâchement fourchette droite
+
+	actualiserEtAfficherEtatsPhilosophes(id,P_PENSE);
+	randomDelay(0,DUREE_PENSE_MAX_S);
+}
+
+void ViePhilosopheSolution2(int id)
+{
+
+}
 
 
 void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvelEtat)
@@ -184,13 +342,19 @@ void terminerProgramme()
     for(i=0;i<NB_PHILOSOPHES;i++)
     {
     	pthread_cancel(threadsPhilosophes[i]);
+    	pthread_cancel(Sol1_threadScheduler);
     	//std::cout << pthread_philosophes[i] <<std::endl;
     	pthread_join(threadsPhilosophes[i], NULL);
+    	pthread_join(Sol1_threadScheduler, NULL);
     	sem_close(semFourchettes[i]);
+    	sem_close(&semGroupe1);
+    	sem_close(&semGroupe2);
     	//sem_unlink(semFourchettes[i]);
     }
     free(threadsPhilosophes);
     free(semFourchettes);
+    free(etatsPhilosophes);
+    free(t_idx_philos);
 }
 
 
