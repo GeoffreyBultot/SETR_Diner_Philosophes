@@ -19,9 +19,10 @@ void ViePhilosopheSolution2(int id);
 #ifdef SOLUTION_1
 pthread_attr_t pthread_attr_Sol1Scheduler;
 pthread_t Sol1_threadScheduler;
-sem_t semGroupe1; //Sem pour philos impaires
-sem_t semGroupe2; //Sem pour philos paires
-sem_t semSynchroThreadsPhilos; //Sem pour la synchro de début (attendre qu'ils soient tous démarrés)
+pthread_mutex_t mutex_Eat_Philosophes[NB_PHILOSOPHES];
+pthread_mutexattr_t mutexattr_Eat_Philosophes[NB_PHILOSOPHES];
+sem_t semSynchroThreadsPhilos;
+
 void* sol1_Master_Scheduler(void* args);
 
 #endif
@@ -47,38 +48,23 @@ void initialisation()
 	mutexCout = PTHREAD_MUTEX_INITIALIZER;
 	mutexEtats = PTHREAD_MUTEX_INITIALIZER;
 
+
 	pthread_mutex_init(&mutexCout, &pthread_attr_Cout);
 	pthread_mutex_init(&mutexEtats, &pthread_attr_Etats);
 	instantDebut = time(NULL);
-#ifdef SOLUTION_1
-	if( pthread_create(&Sol1_threadScheduler, &pthread_attr_Sol1Scheduler, sol1_Master_Scheduler, NULL)==0)
-		std::cout << "[INFO] Thread Sol1_threadScheduler created" << std::endl;
-	else
-		std::cout << "[WARNING] Thread Sol1_threadScheduler not created " << std::endl;
 
-	if( sem_init( &semGroupe1, 0, 0) == 0)//Fourchettes lachees par defaut
-		std::cout << "[INFO] semaphore Groupe1 initialized" << std::endl;
-	else
-		std::cout << "[WARNING] semaphore Groupe1 not initialized " << std::endl;
-
-	if( sem_init( &semGroupe2, 0, 0) == 0)//Fourchettes lachees par defaut
-		std::cout << "[INFO] semaphore Groupe2 initialized" << std::endl;
-	else
-		std::cout << "[WARNING] semaphore Groupe2 not initialized " << std::endl;
-
-
-	if( sem_init( &semSynchroThreadsPhilos, 0, 0) == 0)//Fourchettes lachees par defaut
-		std::cout << "[INFO] semaphore semSynchroThreadsPhilos initialized" << std::endl;
-	else
-		std::cout << "[WARNING] semaphore semSynchroThreadsPhilos not initialized " << std::endl;
-
-
-#endif
 
 
 	usleep(100);
 	for(int i=0;i<NB_PHILOSOPHES;i++)
 	{
+		mutex_Eat_Philosophes[i] = PTHREAD_MUTEX_INITIALIZER;
+		if( pthread_mutex_init(&mutex_Eat_Philosophes[i], &mutexattr_Eat_Philosophes[i]) == 0)//Fourchettes lachees par defaut
+			std::cout << "[INFO] semaphore semSynchroThreadsPhilos initialized" << std::endl;
+		else
+			std::cout << "[WARNING] semaphore semSynchroThreadsPhilos not initialized " << std::endl;
+
+
 		semFourchettes[i] = (sem_t*)malloc(sizeof(sem_t));
 		if( sem_init( semFourchettes[i], 0, 1) == 0)//Fourchettes lachees par defaut
 			std::cout << "[INFO] semaphore Fourchette " <<i<<" initialized" << std::endl;
@@ -96,7 +82,18 @@ void initialisation()
 		//usleep(10);
 	}
 
+#ifdef SOLUTION_1
+	if( pthread_create(&Sol1_threadScheduler, &pthread_attr_Sol1Scheduler, sol1_Master_Scheduler, NULL)==0)
+		std::cout << "[INFO] Thread Sol1_threadScheduler created" << std::endl;
+	else
+		std::cout << "[WARNING] Thread Sol1_threadScheduler not created " << std::endl;
 
+
+	if( sem_init( &semSynchroThreadsPhilos, 0, 0) == 0)//Fourchettes lachees par defaut
+		std::cout << "[INFO] semaphore semSynchroThreadsPhilos initialized" << std::endl;
+	else
+		std::cout << "[WARNING] semaphore semSynchroThreadsPhilos not initialized " << std::endl;
+#endif
 
 	#ifdef SOLUTION_1
 	bool TousFaim = false;
@@ -162,9 +159,6 @@ void* vieDuPhilosophe(void* idPtr)
     
     while(1)
     {
-#ifdef SOLUTION_BASE
-    	ViePhilosopheSolutionBasique(id);
-#endif
 #ifdef SOLUTION_1
     	ViePhilosopheSolution1(id);
 #endif
@@ -180,113 +174,101 @@ void* vieDuPhilosophe(void* idPtr)
 
 void* sol1_Master_Scheduler(void* args)
 {
-	std::cout << "oui"<<std::endl;
 	bool tousFaim = false;
 	bool tousFiniDeManger = false;
 	int etat_sema;
-
+	int i,starti;
     pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
     pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
+	std::cout<<"oui"<<std::endl;
+
+	for(i = 0 ; i < NB_PHILOSOPHES ; i ++)
+		pthread_mutex_lock(&mutex_Eat_Philosophes[i]);
+
 	while(1)
 	{
-		sem_getvalue(&semGroupe1, &etat_sema);
-		if(etat_sema == 1)//Si semaphore est pris
+
+
+
+		//std::cout<<"oui"<<std::endl;
+
+		tousFaim = false;
+		while(tousFaim == false)
 		{
-			sem_post(&semGroupe1);//Lachage du semaphore pour faire manger le groupe 1
+			tousFaim = true;
+			for(int i=0;i<NB_PHILOSOPHES;i+=2)
+			{
+				if(etatsPhilosophes[i]!=P_FAIM)
+					tousFaim=false;
+			}
 		}
+		//std::cout<<"[DEBUG] G1 a faim"<<std::endl;
+		//Laisser manger les philos
+		pthread_mutex_unlock(&mutex_Eat_Philosophes[0]);
+		pthread_mutex_unlock(&mutex_Eat_Philosophes[2]);
+		pthread_mutex_unlock(&mutex_Eat_Philosophes[4]);
+
+		//std::cout<<"[DEBUG] G1 mange "<<std::endl;
+
 		tousFiniDeManger = false;
-		std::cout << "[DEBUG] Le groupe 1 peut manger" <<std::endl;
-		while(tousFiniDeManger == false) //Attends que tous les impaires aient mangé
-		{
-			//std::cout<<"uiui"<<std::endl;
-			tousFiniDeManger = true;
-			for(int i = 1; i<NB_PHILOSOPHES;i+=2)
-			{
-				if(etatsPhilosophes[i] == P_MANGE)
-				{
-					tousFiniDeManger = false;
-					//std::cout << "pas fini de manger" <<std::endl;
-				}
-			}
-		}
-		std::cout << "[DEBUG] Le groupe 1 a fini de manger" <<std::endl;
-		//tous les impaires ont mangé rebloquer leur semaphore
-
-		sem_wait(&semGroupe1);
-
-
-		std::cout << "[DEBUG] Semaphore groupe 1 PRIS" <<std::endl;
-
-		tousFaim=false;
-		std::cout<<"groupe1 fini de manger"<<std::endl;
-		while(tousFaim == false) //Attends que tous les paires aient faim
-		{
-			tousFaim = true;
-			for(int i = 0; i<NB_PHILOSOPHES;i+=2)
-			{
-				if(etatsPhilosophes[i] != P_FAIM)
-				{
-					tousFiniDeManger = false;
-				}
-			}
-		}
-		std::cout<<"groupe2 tous faim"<<std::endl;
-
-
-		//faire manger les paires
-		sem_post(&semGroupe2);
-		while(tousFiniDeManger == false) //Attends que tous les impaires aient mangé
+		while(tousFiniDeManger  == false)
 		{
 			tousFiniDeManger = true;
-			for(int i = 1; i<NB_PHILOSOPHES;i+=2)
+			for(int i=0;i<NB_PHILOSOPHES;i+=2)
 			{
-				if(etatsPhilosophes[i] == P_MANGE)
-				{
-					tousFiniDeManger = false;
-				}
+				if(etatsPhilosophes[i]!=P_MANGE)
+					tousFiniDeManger =false;
 			}
 		}
 
+		pthread_mutex_lock(&mutex_Eat_Philosophes[0]);
+		pthread_mutex_lock(&mutex_Eat_Philosophes[2]);
+		pthread_mutex_lock(&mutex_Eat_Philosophes[4]);
 
-		while(tousFaim == false) //Attends que tous les paires aient faim
+		//std::cout<<"[DEBUG] G1 a fini de manger"<<std::endl;
+
+
+		while(tousFaim == false)
 		{
 			tousFaim = true;
-			for(int i = 0; i<NB_PHILOSOPHES;i+=2)
+			for(int i=1;i<NB_PHILOSOPHES;i+=2)
 			{
-				if(etatsPhilosophes[i] != P_FAIM)
-				{
-					tousFiniDeManger = false;
-				}
+				if(etatsPhilosophes[i]!=P_FAIM)
+					tousFaim=false;
 			}
 		}
-		//tous les paires ont mangé rebloquer leur semaphore
-		sem_wait(&semGroupe1);
-		//faire manger les paires
-		sem_post(&semGroupe2);
+		//std::cout<<"[DEBUG] G2 a faim"<<std::endl;
 
-		//groupe 2 peut manger
+		pthread_mutex_unlock(&mutex_Eat_Philosophes[1]);
+		pthread_mutex_unlock(&mutex_Eat_Philosophes[3]);
+		pthread_mutex_unlock(&mutex_Eat_Philosophes[5]);
+
+		//std::cout<<"[DEBUG] G2 mange"<<std::endl;
+
+		tousFiniDeManger = false;
+		while(tousFiniDeManger  == false)
+		{
+			tousFiniDeManger = true;
+			for(int i=1;i<NB_PHILOSOPHES;i+=2)
+			{
+				if(etatsPhilosophes[i]!=P_MANGE)
+					tousFiniDeManger =false;
+			}
+		}
+
+
+
+
+
+		pthread_mutex_lock(&mutex_Eat_Philosophes[1]);
+		pthread_mutex_lock(&mutex_Eat_Philosophes[3]);
+		pthread_mutex_lock(&mutex_Eat_Philosophes[5]);
+
+		std::cout<<"[DEBUG] G2 a fini de manger"<<std::endl;
+
 
         pthread_testcancel();
 	}
-}
-
-void ViePhilosopheSolutionBasique(int id)
-{
-	etatsPhilosophes[id] = 'F';
-	actualiserEtAfficherEtatsPhilosophes(id,etatsPhilosophes[id]);
-	sem_wait(semFourchettes[id]); //Acquisition fourchette gauche
-	//usleep(10);
-	sem_wait(semFourchettes[ (id+1)%NB_PHILOSOPHES]); //Acquisition fourchette droite
-
-	etatsPhilosophes[id] = 'M';
-	actualiserEtAfficherEtatsPhilosophes(id,etatsPhilosophes[id]);
-	randomDelay(0,DUREE_MANGE_MAX_S);
-	sem_post(semFourchettes[id]); //Relâchement fourchette gauche
-	sem_post(semFourchettes[(id+1)%NB_PHILOSOPHES]); //Relâchement fourchette droite
-
-	etatsPhilosophes[id] = 'P';
-	actualiserEtAfficherEtatsPhilosophes(id,etatsPhilosophes[id]);
-	randomDelay(0,DUREE_PENSE_MAX_S);
 }
 
 void ViePhilosopheSolution1(int id)
@@ -294,30 +276,18 @@ void ViePhilosopheSolution1(int id)
 	int value_sema = 0;
 	etatsPhilosophes[id] = P_FAIM;
 	while(value_sema == 0)//Tant que le semaphore est pris
-			sem_getvalue(&semSynchroThreadsPhilos, &value_sema);
+		sem_getvalue(&semSynchroThreadsPhilos, &value_sema);
 
 	actualiserEtAfficherEtatsPhilosophes(id,P_FAIM);
-
-	//std::cout<< "philo" << id << "peut manger" <<std::endl;
-	if(id%2)
-	{
-		while(value_sema == 0)
-				sem_getvalue(&semGroupe1, &value_sema);
-		//std::cout<<"sema1"<<value_sema<<std::endl;
-	}
-	else
-	{
-
-		while(value_sema == 0)
-				sem_getvalue(&semGroupe2, &value_sema);
-		//std::cout<<"sema2"<<value_sema<<std::endl;
-	}
+	pthread_mutex_lock(&mutex_Eat_Philosophes[id]);
+	//std::cout<<"[debug] pilo : "<< id <<" mange" << std::endl;
 	sem_wait(semFourchettes[id]); //Acquisition fourchette gauche
-	//usleep(10);
 	sem_wait(semFourchettes[ (id+1)%NB_PHILOSOPHES]); //Acquisition fourchette droite
 
 	actualiserEtAfficherEtatsPhilosophes(id,P_MANGE);
 	randomDelay(0,DUREE_MANGE_MAX_S);
+	pthread_mutex_unlock(&mutex_Eat_Philosophes[id]);
+
 	sem_post(semFourchettes[id]); //Relâchement fourchette gauche
 	sem_post(semFourchettes[(id+1)%NB_PHILOSOPHES]); //Relâchement fourchette droite
 
@@ -367,8 +337,6 @@ void terminerProgramme()
     int i;
     int sem_value;
     sem_close(&semSynchroThreadsPhilos);
-	sem_close(&semGroupe1);
-	sem_close(&semGroupe2);
 
 	pthread_cancel(Sol1_threadScheduler);
     for(i=0;i<NB_PHILOSOPHES;i++)
