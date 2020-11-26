@@ -104,3 +104,228 @@ Invoking: GCC C++ Linker
 g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
 Finished building target: DinerPhilosophes
  
+17:17:53 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:42:6: warning: unused variable ‘err’ [-Wunused-variable]
+   42 |  int err = 0;
+      |      ^~~
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:6: warning: unused variable ‘etat_sema’ [-Wunused-variable]
+  179 |  int etat_sema;
+      |      ^~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+17:18:40 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:42:6: warning: unused variable ‘err’ [-Wunused-variable]
+   42 |  int err = 0;
+      |      ^~~
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:6: warning: unused variable ‘etat_sema’ [-Wunused-variable]
+  179 |  int etat_sema;
+      |      ^~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+17:20:51 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:42:6: warning: unused variable ‘err’ [-Wunused-variable]
+   42 |  int err = 0;
+      |      ^~~
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:6: warning: unused variable ‘etat_sema’ [-Wunused-variable]
+  179 |  int etat_sema;
+      |      ^~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+17:25:45 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:42:6: warning: unused variable ‘err’ [-Wunused-variable]
+   42 |  int err = 0;
+      |      ^~~
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:6: warning: unused variable ‘etat_sema’ [-Wunused-variable]
+  179 |  int etat_sema;
+      |      ^~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+17:28:51 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:42:6: warning: unused variable ‘err’ [-Wunused-variable]
+   42 |  int err = 0;
+      |      ^~~
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:6: warning: unused variable ‘etat_sema’ [-Wunused-variable]
+  179 |  int etat_sema;
+      |      ^~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+17:29:32 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:42:6: warning: unused variable ‘err’ [-Wunused-variable]
+   42 |  int err = 0;
+      |      ^~~
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:6: warning: unused variable ‘etat_sema’ [-Wunused-variable]
+  179 |  int etat_sema;
+      |      ^~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+21:25:26 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:42:6: warning: unused variable ‘err’ [-Wunused-variable]
+   42 |  int err = 0;
+      |      ^~~
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:6: warning: unused variable ‘etat_sema’ [-Wunused-variable]
+  179 |  int etat_sema;
+      |      ^~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+21:30:24 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:42:6: warning: unused variable ‘err’ [-Wunused-variable]
+   42 |  int err = 0;
+      |      ^~~
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:6: warning: unused variable ‘etat_sema’ [-Wunused-variable]
+  179 |  int etat_sema;
+      |      ^~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+21:31:22 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:42:6: warning: unused variable ‘err’ [-Wunused-variable]
+   42 |  int err = 0;
+      |      ^~~
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:6: warning: unused variable ‘etat_sema’ [-Wunused-variable]
+  179 |  int etat_sema;
+      |      ^~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+22:15:14 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:42:6: warning: unused variable ‘err’ [-Wunused-variable]
+   42 |  int err = 0;
+      |      ^~~
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:6: warning: unused variable ‘etat_sema’ [-Wunused-variable]
+  179 |  int etat_sema;
+      |      ^~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+22:18:11 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:42:6: warning: unused variable ‘err’ [-Wunused-variable]
+   42 |  int err = 0;
+      |      ^~~
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:6: warning: unused variable ‘etat_sema’ [-Wunused-variable]
+  179 |  int etat_sema;
+      |      ^~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 

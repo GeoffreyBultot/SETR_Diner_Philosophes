@@ -177,7 +177,8 @@ void* sol1_Master_Scheduler(void* args)
 	bool tousFaim = false;
 	bool tousFiniDeManger = false;
 	int etat_sema;
-	int i,starti;
+	int i,starti = 0;
+	int philosopheExcluSiImpair = 0;
     pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
     pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
 	std::cout<<"oui"<<std::endl;
@@ -189,83 +190,70 @@ void* sol1_Master_Scheduler(void* args)
 	{
 
 
+		if(NB_PHILOSOPHES % 2) //si on a un nombre impaire de philosophes
+		{
+			if(rand()%2)
+				philosopheExcluSiImpair = NB_PHILOSOPHES-1;
+			else
+				philosopheExcluSiImpair = 0;
 
-		//std::cout<<"oui"<<std::endl;
+		}
+
 
 		tousFaim = false;
-		while(tousFaim == false)
-		{
+		while(tousFaim == false){
 			tousFaim = true;
-			for(int i=0;i<NB_PHILOSOPHES;i+=2)
-			{
+			for(int i=starti;i<NB_PHILOSOPHES;i+=2){
 				if(etatsPhilosophes[i]!=P_FAIM)
 					tousFaim=false;
 			}
 		}
-		//std::cout<<"[DEBUG] G1 a faim"<<std::endl;
-		//Laisser manger les philos
-		pthread_mutex_unlock(&mutex_Eat_Philosophes[0]);
-		pthread_mutex_unlock(&mutex_Eat_Philosophes[2]);
-		pthread_mutex_unlock(&mutex_Eat_Philosophes[4]);
 
-		//std::cout<<"[DEBUG] G1 mange "<<std::endl;
+		std::cout<<"[DEBUG] TOUS FAIM "<<std::endl;
+		for(i =  starti ; i <NB_PHILOSOPHES ; i+=2)
+		{
+			if(NB_PHILOSOPHES%2)
+			{
+				if(i != philosopheExcluSiImpair)
+				{
+					pthread_mutex_unlock(&mutex_Eat_Philosophes[i]);
+				}
+			}
+			else
+			{
+				pthread_mutex_unlock(&mutex_Eat_Philosophes[i]);
+			}
+		}
+		std::cout<<"[DEBUG] Ils VONT MANGER"<<std::endl;
 
 		tousFiniDeManger = false;
-		while(tousFiniDeManger  == false)
-		{
+		while(tousFiniDeManger  == false){
 			tousFiniDeManger = true;
-			for(int i=0;i<NB_PHILOSOPHES;i+=2)
-			{
-				if(etatsPhilosophes[i]!=P_MANGE)
+			for(int i=starti;i<NB_PHILOSOPHES;i+=2){
+				if(etatsPhilosophes[i] == P_MANGE)
 					tousFiniDeManger =false;
 			}
 		}
-
-		pthread_mutex_lock(&mutex_Eat_Philosophes[0]);
-		pthread_mutex_lock(&mutex_Eat_Philosophes[2]);
-		pthread_mutex_lock(&mutex_Eat_Philosophes[4]);
-
-		//std::cout<<"[DEBUG] G1 a fini de manger"<<std::endl;
-
-
-		while(tousFaim == false)
+		std::cout<<"[DEBUG] FINI DE MANGER"<<std::endl;
+		for(i =  starti ; i <NB_PHILOSOPHES ; i+=2)
 		{
-			tousFaim = true;
-			for(int i=1;i<NB_PHILOSOPHES;i+=2)
+			if(NB_PHILOSOPHES%2)
 			{
-				if(etatsPhilosophes[i]!=P_FAIM)
-					tousFaim=false;
+				if(i != philosopheExcluSiImpair)
+				{
+					pthread_mutex_unlock(&mutex_Eat_Philosophes[i]);
+				}
 			}
-		}
-		//std::cout<<"[DEBUG] G2 a faim"<<std::endl;
-
-		pthread_mutex_unlock(&mutex_Eat_Philosophes[1]);
-		pthread_mutex_unlock(&mutex_Eat_Philosophes[3]);
-		pthread_mutex_unlock(&mutex_Eat_Philosophes[5]);
-
-		//std::cout<<"[DEBUG] G2 mange"<<std::endl;
-
-		tousFiniDeManger = false;
-		while(tousFiniDeManger  == false)
-		{
-			tousFiniDeManger = true;
-			for(int i=1;i<NB_PHILOSOPHES;i+=2)
+			else
 			{
-				if(etatsPhilosophes[i]!=P_MANGE)
-					tousFiniDeManger =false;
+				pthread_mutex_unlock(&mutex_Eat_Philosophes[i]);
 			}
 		}
 
-
-
-
-
-		pthread_mutex_lock(&mutex_Eat_Philosophes[1]);
-		pthread_mutex_lock(&mutex_Eat_Philosophes[3]);
-		pthread_mutex_lock(&mutex_Eat_Philosophes[5]);
-
-		std::cout<<"[DEBUG] G2 a fini de manger"<<std::endl;
-
+		if(starti == 0)
+			starti = 1;
+		else
+			starti = 0;
 
         pthread_testcancel();
 	}
@@ -285,6 +273,7 @@ void ViePhilosopheSolution1(int id)
 	sem_wait(semFourchettes[ (id+1)%NB_PHILOSOPHES]); //Acquisition fourchette droite
 
 	actualiserEtAfficherEtatsPhilosophes(id,P_MANGE);
+
 	randomDelay(0,DUREE_MANGE_MAX_S);
 	pthread_mutex_unlock(&mutex_Eat_Philosophes[id]);
 
@@ -338,9 +327,19 @@ void terminerProgramme()
     int sem_value;
     sem_close(&semSynchroThreadsPhilos);
 
+
 	pthread_cancel(Sol1_threadScheduler);
+    std::cout<< "Sol1_threadScheduler to join"<<std::endl;
+	pthread_join(Sol1_threadScheduler, NULL);
+    std::cout<< "Sol1_threadScheduler joined"<<std::endl;
+
     for(i=0;i<NB_PHILOSOPHES;i++)
     {
+
+
+    	pthread_mutex_destroy(&mutex_Eat_Philosophes[i]);
+
+
     	if(pthread_cancel(threadsPhilosophes[i]) == 0)
 			std::cout << "[INFO] thread philosophe " << i << " canceled successfull"<<std::endl;
 		else
@@ -361,11 +360,7 @@ void terminerProgramme()
     		std::cout << "[INFO] semaphore fourchette " << i << " close correctly"<<std::endl;
     	else
     		std::cout << "[WARNING] semaphore fourchette " << i << " error during close() "<<std::endl;
-
-
     }
-
-	pthread_join(Sol1_threadScheduler, NULL);
     free(threadsPhilosophes);
     free(semFourchettes);
     free(etatsPhilosophes);
