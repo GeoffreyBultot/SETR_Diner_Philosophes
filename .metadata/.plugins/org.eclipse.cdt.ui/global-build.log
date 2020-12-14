@@ -1223,3 +1223,118 @@ Invoking: GCC C++ Linker
 g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
 Finished building target: DinerPhilosophesSolution1
  
+11:30:03 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+11:34:27 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+11:37:09 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void terminerProgramme()’:
+../src/SolutionEtudiant.cpp:162:17: error: ‘Sol1_threadScheduler’ was not declared in this scope
+  162 |  pthread_cancel(Sol1_threadScheduler);
+      |                 ^~~~~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:37:30 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+/usr/bin/ld : ./src/SolutionEtudiant.o : dans la fonction « initialisation() » :
+/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/Debug/../src/SolutionEtudiant.cpp:70 : référence indéfinie vers « vieDuPhilosophe(void*) »
+collect2: error: ld returned 1 exit status
+make: *** [makefile:47 : DinerPhilosophesSoluton2] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:38:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:70:78: error: ‘vieDuPhilosopheSolution2’ was not declared in this scope; did you mean ‘ViePhilosopheSolution1’?
+   70 |   if(pthread_create( &threadsPhilosophes[i], &(pthread_attr_philosophes[i]), vieDuPhilosopheSolution2, &(t_idx_philos[i])) == 0)
+      |                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                              ViePhilosopheSolution1
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:39:18 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:70:78: error: invalid conversion from ‘void (*)(int)’ to ‘void* (*)(void*)’ [-fpermissive]
+   70 |   if(pthread_create( &threadsPhilosophes[i], &(pthread_attr_philosophes[i]), vieDuPhilosopheSolution2, &(t_idx_philos[i])) == 0)
+      |                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                              |
+      |                                                                              void (*)(int)
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/ios_base.h:39,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from ../src/SolutionEtudiant.cpp:1:
+/usr/include/pthread.h:200:15: note:   initializing argument 3 of ‘int pthread_create(pthread_t*, const pthread_attr_t*, void* (*)(void*), void*)’
+  200 |       void *(*__start_routine) (void *),
+      |       ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:41:10 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:114:6: error: ‘ViePhilosopheSolution2’ was not declared in this scope; did you mean ‘vieDuPhilosopheSolution2’?
+  114 |      ViePhilosopheSolution2(id);
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+      |      vieDuPhilosopheSolution2
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:41:46 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+11:42:59 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+11:43:52 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+11:53:04 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
