@@ -1,4 +1,4 @@
-
+// Attention : Ce fichier ne doit pas être modifié
 
 
 #include <iostream>
@@ -13,7 +13,6 @@
 
 
 // Déclaration effective des globales
-
 char* etatsPhilosophes = NULL;
 pthread_mutex_t mutexEtats;
 pthread_t* threadsPhilosophes = NULL;
@@ -38,12 +37,12 @@ int main(int argc, const char * argv[]) {
 #ifdef SOLUTION_2
     std::cout << "Solution 2 : ordonnanceur asynchrone, 1 seule fonction d'ordonnancement appelée depuis chaque tâche" << std::endl;
 #endif
-#ifdef SOLUTION_3
-    std::cout << "Solution 3 : ordonnanceur automatique asynchrone, méthode Chandy / Misra" << std::endl;
-#endif
 
 
     // - - - - - Mise en place du handler de signal - - - - -
+    /// Le signal SIGTERM est le signal par défaut envoyé par la commande kill
+    /// Pour arrêter ce programme proprement (même s'il est actuellement en cours de débug dans Eclipse et donc contrôlé par GDB),
+    /// il suffira d'exécuter la commande 'kill PID_DE_VOTRE_PROCESSUS' dans un terminal
 
     // Création et initialisation de la structure POSIX
     struct sigaction signalAction;
@@ -51,9 +50,9 @@ int main(int argc, const char * argv[]) {
     signalAction.sa_flags = 0;
     // Fonction appelée lors de la signalisation
     signalAction.sa_handler = &generalSignalHandler;
-    // Interception de SIGINT uniquement
-    if (sigaction(SIGINT, &signalAction, NULL) == -1) // si erreur
-        std::cerr << "Impossible d'intercepter SIGINT !" << std::endl;
+    // Interception de SIGTERM uniquement
+    if (sigaction(SIGTERM, &signalAction, NULL) == -1) // si erreur
+        std::cerr << "Impossible d'intercepter SIGTERM !" << std::endl;
 
 
 
@@ -73,7 +72,7 @@ int main(int argc, const char * argv[]) {
 // Pourrait intercepter et gérer tous les signaux, selon la configuration
 void generalSignalHandler(int signal)
 {
-    if (signal == SIGINT)
+    if (signal == SIGTERM)
     {
         std::cout << std::endl << "Exécution de terminerProgramme() en cours..." << std::endl;
         terminerProgramme();
@@ -83,4 +82,3 @@ void generalSignalHandler(int signal)
     else
         std::cerr << "Signal non-géré" << std::endl;
 }
-
