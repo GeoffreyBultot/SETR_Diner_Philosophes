@@ -176,24 +176,16 @@ void* sol1_Master_Scheduler(void* args)
 	sem_post(&semSynchroThreadsPhilos);
 	while(1)
 	{
-		std::cout << "!!!!!! NOUVEAU COUP !!!!!!" <<std::endl;
-		if(NB_PHILOSOPHES % 2) //si on a un nombre impaire de philosophes
-		{//Choix d'un philosophe qui va être exclu de la table. Le premier ou le dernier.
-			if(rand()%2)
-				philosopheExcluSiImpair = NB_PHILOSOPHES-1;
-			else
-				philosopheExcluSiImpair = 0;
-			std :: cout << "excluded = " << philosopheExcluSiImpair <<std::endl;
-		}
-
-
 		std::cout << "check si faim"<<std::endl;
 		//Attendre que tous les philosophes aient faim.
 		tousFaim = false;
 		while(tousFaim == false){
 			tousFaim = true;
-			for(int i=0;i<NB_PHILOSOPHES;i+=2){
-				if(i != philosopheExcluSiImpair){
+			//On fait tous les philos paires ou tous les impaires selon starti
+			for(int i=starti;i<NB_PHILOSOPHES;i+=2)
+			{
+				if(i != philosopheExcluSiImpair)
+				{
 					if(etatsPhilosophes[i]!=P_FAIM)
 						tousFaim=false;
 					}
@@ -201,7 +193,7 @@ void* sol1_Master_Scheduler(void* args)
 			}
 
 		//Tous les philosophes ont faim
-		std::cout<<"[DEBUG] TOUS FAIM "<<std::endl;
+		//std::cout<<"[DEBUG] TOUS FAIM "<<std::endl;
 		for(i =  starti ; i <NB_PHILOSOPHES ; i+=2){
 			if(i!=philosopheExcluSiImpair){
 				pthread_mutex_unlock(&mutex_Eat_Philosophes[i]);
@@ -211,12 +203,12 @@ void* sol1_Master_Scheduler(void* args)
 
 
 		//Tous les philosophes vont manger
-		std::cout<<"[DEBUG] Ils VONT MANGER"<<std::endl;
+		//std::cout<<"[DEBUG] Ils VONT MANGER"<<std::endl;
 
 		tousFiniDeManger = false;
 		while(tousFiniDeManger  == false){
 			tousFiniDeManger = true;
-			for(int i=0;i<NB_PHILOSOPHES;i+=2){
+			for(int i=starti;i<NB_PHILOSOPHES;i+=2){
 				if(i != philosopheExcluSiImpair){
 					if(etatsPhilosophes[i]==P_MANGE)
 						tousFiniDeManger = false;
@@ -225,15 +217,35 @@ void* sol1_Master_Scheduler(void* args)
 			}
 
 
-		std::cout<<"[DEBUG] FINI DE MANGER"<<std::endl;
-		for(i =  0; i <NB_PHILOSOPHES; i+=2){
+		//std::cout<<"[DEBUG] FINI DE MANGER"<<std::endl;
+		for(i =  starti; i <NB_PHILOSOPHES; i+=2){
 			if(i!=philosopheExcluSiImpair){
 				pthread_mutex_lock(&mutex_Eat_Philosophes[i]);
 				//std::cout << "mutex Lock : " << i << std::endl;
 			}
 		}
 
-        pthread_testcancel();
+		if(starti == 0)
+		{
+			starti = 1;
+			//std::cout<<"C EST AU TOUT DES IMPAIRES"<<std::endl;
+		}
+		else
+		{
+			starti = 0;
+			//std::cout<<"C EST AU TOUT DES PAIRES"<<std::endl;if(NB_PHILOSOPHES % 2) //si on a un nombre impaire de philosophes
+			if(NB_PHILOSOPHES%2)
+			{//Choix d'un philosophe qui va être exclu de la table. Le premier ou le dernier.
+				if(philosopheExcluSiImpair  == 0)
+					philosopheExcluSiImpair = NB_PHILOSOPHES-1;
+				else
+					philosopheExcluSiImpair = 0;
+				std :: cout << "excluded = " << philosopheExcluSiImpair <<std::endl;
+			}
+		}
+
+		pthread_testcancel();
+
 	}
 }
 
@@ -248,7 +260,7 @@ void ViePhilosopheSolution1(int id)
 	sem_wait(semFourchettes[id]); //Acquisition fourchette gauche
 	sem_wait(semFourchettes[ (id+1)%NB_PHILOSOPHES]); //Acquisition fourchette droite
 
-	std::cout<<"[debug] pilo : "<< id <<" mange" << std::endl;
+	//std::cout<<"[debug] pilo : "<< id <<" mange" << std::endl;
 	actualiserEtAfficherEtatsPhilosophes(id,P_MANGE);
 
 	randomDelay(0,DUREE_MANGE_MAX_S);
