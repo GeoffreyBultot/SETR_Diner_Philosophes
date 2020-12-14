@@ -2141,3 +2141,9 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp
 
 !ENTRY org.eclipse.core.resources 2 10035 2020-12-14 09:54:50.728
 !MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-12-14 11:24:49.632
+!MESSAGE Indexed 'DinerPhilosophesSoluton2' (2 sources, 213 headers) in 47,4 sec: 15 010 declarations; 23 139 references; 0 unresolved inclusions; 0 syntax errors; 6 unresolved names (0,016 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-12-14 11:27:20.543
+!MESSAGE Indexed 'DinerPhilosophesSolution1' (2 sources, 213 headers) in 39 sec: 15 010 declarations; 23 131 references; 0 unresolved inclusions; 0 syntax errors; 6 unresolved names (0,016 %)

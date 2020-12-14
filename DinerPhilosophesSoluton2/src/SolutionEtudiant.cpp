@@ -8,10 +8,14 @@
 
 #include "Header_Prof.h"
 
+#ifdef SOLUTION_ETUDIANT
+
+
 void ViePhilosopheSolution1(int id);
 void ViePhilosopheSolution2(int id);
 
 
+#ifdef SOLUTION_1
 pthread_attr_t pthread_attr_Sol1Scheduler;
 pthread_t Sol1_threadScheduler;
 pthread_mutex_t mutex_Eat_Philosophes[NB_PHILOSOPHES];
@@ -19,6 +23,8 @@ pthread_mutexattr_t mutexattr_Eat_Philosophes[NB_PHILOSOPHES];
 sem_t semSynchroThreadsPhilos;
 
 void* sol1_Master_Scheduler(void* args);
+
+#endif
 
 sem_t sem_t_fourchettes[NB_PHILOSOPHES-1];
 pthread_attr_t pthread_attr_philosophes[NB_PHILOSOPHES];
@@ -49,10 +55,12 @@ void initialisation()
 	instantDebut = time(NULL);
 
 	/*Create synchro threads philos*/
+#ifdef SOLUTION_1
 	if( sem_init( &semSynchroThreadsPhilos, 0, 0) == 0)//SemSynchro semaphores pris par defaut
 		std::cout << "[INFO] semaphore semSynchroThreadsPhilos initialized" << std::endl;
 	else
 		std::cout << "[WARNING] semaphore semSynchroThreadsPhilos not initialized " << std::endl;
+#endif
 
 	for(int i=0;i<NB_PHILOSOPHES;i++)
 	{
@@ -77,6 +85,8 @@ void initialisation()
 		else
 			std::cout<<"[WARNING] Thread philosophe " <<i<< " not created"<<std::endl;
 	}
+
+#ifdef SOLUTION_1
 	/*create scheduler thread*/
 	if( pthread_create(&Sol1_threadScheduler, &pthread_attr_Sol1Scheduler, sol1_Master_Scheduler, NULL)==0)
 		std::cout << "[INFO] Thread Sol1_threadScheduler created" << std::endl;
@@ -98,6 +108,20 @@ void initialisation()
 
 	}
 	sem_post(&semSynchroThreadsPhilos);
+
+
+	#endif
+
+	#ifdef SOLUTION_2
+
+
+	#endif
+
+	#ifdef SOLUTION_3
+
+
+	#endif
+
 }
 
 
@@ -122,7 +146,12 @@ void* vieDuPhilosophe(void* idPtr)
 
     while(1)
     {
+#ifdef SOLUTION_1
     	ViePhilosopheSolution1(id);
+#endif
+#ifdef SOLUTION_2
+    	ViePhilosopheSolution2(id);
+#endif
         pthread_testcancel();
     }
     return NULL;
@@ -316,3 +345,6 @@ void terminerProgramme()
     free(etatsPhilosophes);
     free(t_idx_philos);
 }
+
+
+#endif

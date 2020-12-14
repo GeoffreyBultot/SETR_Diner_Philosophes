@@ -1,8 +1,9 @@
 LaunchTargetManager/configs/DinerPhilosophes=org.eclipse.launchbar.core.launchTargetType.local\:Local
+LaunchTargetManager/configs/DinerPhilosophesSol1=org.eclipse.launchbar.core.launchTargetType.local\:Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:DinerPhilosophes
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:DinerPhilosophes,org.eclipse.launchbar.core.descriptorType.default\:DinerPhilosophesSol1
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:DinerPhilosophes/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:DinerPhilosophes/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

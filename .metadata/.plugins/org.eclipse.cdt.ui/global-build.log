@@ -1165,3 +1165,61 @@ Invoking: GCC C++ Linker
 g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
 Finished building target: DinerPhilosophes
  
+11:12:41 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+11:25:57 **** Incremental Build of configuration Debug for project DinerPhilosophes ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophes/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophes
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophes"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophes
+ 
+11:26:09 **** Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+11:27:46 **** Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 

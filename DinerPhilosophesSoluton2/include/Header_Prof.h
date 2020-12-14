@@ -12,7 +12,11 @@
 
 
 // Pour choisir quelle version compiler
+#define SOLUTION_ETUDIANT
+//#define SOLUTION_BASE
 #define SOLUTION_1
+//#define SOLUTION_2
+//#define SOLUTION_3
 
 
 
