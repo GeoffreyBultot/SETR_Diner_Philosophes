@@ -147,7 +147,7 @@ void* sol1_Master_Scheduler(void* args)
 	sem_post(&semSynchroThreadsPhilos);
 	while(1)
 	{
-		std::cout << "check si faim"<<std::endl;
+		//std::cout << "check si faim"<<std::endl;
 		//Attendre que tous les philosophes aient faim.
 		tousFaim = false;
 		while(tousFaim == false){
@@ -211,7 +211,7 @@ void* sol1_Master_Scheduler(void* args)
 					philosopheExcluSiImpair = NB_PHILOSOPHES-1;
 				else
 					philosopheExcluSiImpair = 0;
-				std :: cout << "excluded = " << philosopheExcluSiImpair <<std::endl;
+				//std :: cout << "excluded = " << philosopheExcluSiImpair <<std::endl;
 			}
 		}
 
@@ -243,12 +243,6 @@ void ViePhilosopheSolution1(int id)
 	actualiserEtAfficherEtatsPhilosophes(id,P_PENSE);
 	randomDelay(0,DUREE_PENSE_MAX_S);
 }
-
-void ViePhilosopheSolution2(int id)
-{
-
-}
-
 
 void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvelEtat)
 {

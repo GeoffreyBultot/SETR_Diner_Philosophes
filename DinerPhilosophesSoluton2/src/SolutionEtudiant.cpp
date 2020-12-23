@@ -120,36 +120,77 @@ void* vieDuPhilosophe(void* idPtr)
 
 void ViePhilosopheSolution2(int id)
 {
-	/*
 	int value_sema = 0;
+	//std::cout<<"attente de synchro"<<std::endl;
 	while(value_sema == 0)//Tant que le semaphore est pris
 		sem_getvalue(&semSynchroThreadsPhilos, &value_sema);
-
+	//std::cout<<"TheadSynchronisé"<<std::endl;
 	actualiserEtAfficherEtatsPhilosophes(id,P_FAIM);
-	pthread_mutex_lock(&mutex_Eat_Philosophes[id]);
 	sem_wait(semFourchettes[id]); //Acquisition fourchette gauche
 	sem_wait(semFourchettes[ (id+1)%NB_PHILOSOPHES]); //Acquisition fourchette droite
 
-	//std::cout<<"[debug] pilo : "<< id <<" mange" << std::endl;
 	actualiserEtAfficherEtatsPhilosophes(id,P_MANGE);
-
 	randomDelay(0,DUREE_MANGE_MAX_S);
-	pthread_mutex_unlock(&mutex_Eat_Philosophes[id]);
 
 	sem_post(semFourchettes[id]); //Relâchement fourchette gauche
 	sem_post(semFourchettes[(id+1)%NB_PHILOSOPHES]); //Relâchement fourchette droite
-
 	actualiserEtAfficherEtatsPhilosophes(id,P_PENSE);
+
 	randomDelay(0,DUREE_PENSE_MAX_S);
-	*/
 }
-
-
+int excluded = 0;
 void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvelEtat)
 {
+	int gauche=0;
+	int starti=0;
+	int i_otherGroup = 0;
 	pthread_mutex_lock(&mutexEtats);
     etatsPhilosophes[idPhilosopheChangeant] = nouvelEtat;
-    pthread_mutex_unlock(&mutexEtats);
+	pthread_mutex_unlock(&mutexEtats);
+	if(idPhilosopheChangeant%2){ //L'id est impair
+		i_otherGroup = 0;
+		starti=1;
+	}
+	else	{
+		i_otherGroup = 1;
+		starti=0;
+	}
+	if(nouvelEtat == P_MANGE)
+	{
+		//while(excluded == idPhilosopheChangeant);
+
+		//On va attendre que ceux de son groupe aient envie de manger
+		//Et que ceux du groupe avant ne mangent plus
+		bool AutreGroupeAFiniDeManger = false;
+		bool SonGroupeVeutManger = false;
+		usleep(100);
+		while(SonGroupeVeutManger == false){
+			SonGroupeVeutManger = true;
+			for(int i = starti; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
+				if(etatsPhilosophes[i] != P_MANGE){
+					SonGroupeVeutManger = false;
+				}
+			}
+		}
+		std::cout<<"tout son groupe a faim"<<std::endl;
+		while(AutreGroupeAFiniDeManger == false){
+			AutreGroupeAFiniDeManger = true;
+				for(int i = i_otherGroup; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
+					if(etatsPhilosophes[i] == P_MANGE){
+						AutreGroupeAFiniDeManger = false;
+					}
+				}
+			}
+		std::cout<<"autre groupe fini de manger"<<std::endl;
+		if(idPhilosopheChangeant == excluded)
+		{
+			if(idPhilosopheChangeant == NB_PHILOSOPHES-1)
+				excluded = 0;
+			else
+				excluded = NB_PHILOSOPHES-1;
+		}
+	}
+
 
     pthread_mutex_lock(&mutexCout);
     
