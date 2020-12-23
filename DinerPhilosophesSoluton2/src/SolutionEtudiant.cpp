@@ -3,6 +3,8 @@
 #include <unistd.h> // entre autres : usleep
 #include <semaphore.h>
 #include <pthread.h>
+#include <errno.h>
+#include <string.h>
 
 #include "SolutionEtudiant.hpp"
 
@@ -21,6 +23,7 @@ pthread_attr_t pthread_attr_philosophes[NB_PHILOSOPHES];
 pthread_mutexattr_t pthread_attr_Cout;
 pthread_mutexattr_t pthread_attr_Etats;
 int * t_idx_philos;
+int excluded = NB_PHILOSOPHES;
 
 void initialisation()
 {
@@ -33,21 +36,23 @@ void initialisation()
 
 	/*HIGH PRIORITY AND SCHED FIFO*/
 	sched_getparam(PID,&schedparam);
-	schedparam.sched_priority = 1;
-	sched_setscheduler(PID,SCHED_FIFO,&schedparam);
-
+	schedparam.sched_priority = 80;
+	std::cout<<sched_setscheduler(PID,SCHED_FIFO,&schedparam)<<std::endl;
+	printf(" %s\n", strerror(errno));
 	mutexCout = PTHREAD_MUTEX_INITIALIZER;
 	mutexEtats = PTHREAD_MUTEX_INITIALIZER;
 	pthread_mutex_init(&mutexCout, &pthread_attr_Cout);
 	pthread_mutex_init(&mutexEtats, &pthread_attr_Etats);
 
 	instantDebut = time(NULL);
-
+	if(NB_PHILOSOPHES%2)
+		excluded = 0;
 	/*Create synchro threads philos*/
 	if( sem_init( &semSynchroThreadsPhilos, 0, 0) == 0)//SemSynchro semaphores pris par defaut
 		std::cout << "[INFO] semaphore semSynchroThreadsPhilos initialized" << std::endl;
 	else
 		std::cout << "[WARNING] semaphore semSynchroThreadsPhilos not initialized " << std::endl;
+
 
 	for(int i=0;i<NB_PHILOSOPHES;i++)
 	{
@@ -58,6 +63,9 @@ void initialisation()
 		else
 			std::cout << "[WARNING] semaphore semSynchroThreadsPhilos not initialized " << std::endl;
 
+	}
+	for(int i=0;i<NB_PHILOSOPHES;i++)
+	{
 		/*Init sem forks philos*/
 		semFourchettes[i] = (sem_t*)malloc(sizeof(sem_t));
 		if( sem_init( semFourchettes[i], 0, 1) == 0)//Fourchettes lachees par defaut
@@ -65,7 +73,10 @@ void initialisation()
 		else
 			std::cout << "[WARNING] semaphore Fourchette " <<i<<" not initialized " << std::endl;
 		t_idx_philos[i] = i;
+	}
 
+	for(int i=0;i<NB_PHILOSOPHES;i++)
+	{
 		/*Create threads philosophes*/
 		if(pthread_create( &threadsPhilosophes[i], &(pthread_attr_philosophes[i]), &vieDuPhilosophe, &(t_idx_philos[i])) == 0)
 			std::cout<<"[INFO] Thread philosophe " <<i<< " created"<<std::endl;
@@ -108,6 +119,14 @@ void* vieDuPhilosophe(void* idPtr)
     pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
     pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
     actualiserEtAfficherEtatsPhilosophes(id, P_PENSE);
+    int policy;
+    int max_prio_for_policy;
+    pthread_attr_init(&pthread_attr_philosophes[id]);
+	pthread_attr_getschedpolicy(&pthread_attr_philosophes[id], &policy);
+	max_prio_for_policy = 50;// sched_get_priority_max(policy);
+	pthread_setschedprio(pthread_self(), max_prio_for_policy);
+	//std::cout<<pthread_setschedprio(pthread_self(), max_prio_for_policy)<<std::endl;
+	//printf(" %s\n", strerror(errno));
 
     while(1)
     {
@@ -158,7 +177,6 @@ void setPhiloState(int idPhilo, char statePhilo)
 	pthread_mutex_unlock(&mutexEtats);
 }
 
-int excluded = 6;
 
 bool wantToEat[NB_PHILOSOPHES] = {false};
 
@@ -166,7 +184,7 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 {
 	int starti=0;
 	int i_otherGroup = 0;
-
+	//std::cout<<"excluded = "<<excluded;
 	if(idPhilosopheChangeant%2){ //L'id est impair
 		i_otherGroup = 0;
 		starti=1;
@@ -177,52 +195,61 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 	}
 	if(nouvelEtat == P_MANGE)
 	{
-		wantToEat[idPhilosopheChangeant] = true;
-		//while(excluded == idPhilosopheChangeant){usleep(1);};
 
+		while(excluded == idPhilosopheChangeant){};
+		wantToEat[idPhilosopheChangeant] = true;
 		//On va attendre que ceux de son groupe aient envie de manger
 		//Et que ceux du groupe avant ne mangent plus
 		bool AutreGroupeAFiniDeManger = false;
 		bool SonGroupeVeutManger = false;
 		//usleep(100);
+		//std::cout<<"philo "<<idPhilosopheChangeant<<" veut manger"<<std::endl;
 		while(SonGroupeVeutManger == false){
 			SonGroupeVeutManger = true;
 			for(int i = starti; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
-				if(wantToEat[i] == false){
-					SonGroupeVeutManger = false;
+				if(i!=excluded){
+					if(wantToEat[i] == false) {
+						SonGroupeVeutManger = false;
+					}
 				}
 			}
 		}
-		//std::cout<<"tout le groupe du philo "<<idPhilosopheChangeant<<" veut manger"<<std::endl;
+		std::cout<<"tout le groupe du philo "<<idPhilosopheChangeant<<" veut manger"<<std::endl;
 
 		bool tousMangent = false;
 		setPhiloState(idPhilosopheChangeant,nouvelEtat);
 		while(tousMangent == false){
 			tousMangent = true;
 			for(int i = starti; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
-				if(getPhiloState(i) != P_MANGE){
-					tousMangent = false;
+				if(i!=excluded){
+					if(getPhiloState(i) != P_MANGE){
+						tousMangent = false;
+					}
 				}
+
 			}
 		}
 
 		while(AutreGroupeAFiniDeManger == false){
 			AutreGroupeAFiniDeManger = true;
 				for(int i = i_otherGroup; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
-					if(getPhiloState(i) == P_MANGE){
-						AutreGroupeAFiniDeManger = false;
+					if(i!=excluded){
+						if(getPhiloState(i) == P_MANGE ){
+							AutreGroupeAFiniDeManger = false;
+						}
 					}
 				}
 			}
 		//std::cout<<"autre groupe que le philo "<<idPhilosopheChangeant<<" fini de manger"<<std::endl;
-		/*
-		if(idPhilosopheChangeant == excluded)
-		{
-			if(idPhilosopheChangeant == NB_PHILOSOPHES-1)
-				excluded = 0;
-			else
-				excluded = NB_PHILOSOPHES-1;
-		}*/
+
+		if(idPhilosopheChangeant == excluded){
+			if(NB_PHILOSOPHES%2){
+				if(idPhilosopheChangeant == NB_PHILOSOPHES-1)
+					excluded = 0;
+				else
+					excluded = NB_PHILOSOPHES-1;
+			}
+		}
 	}
 	else
 	{
