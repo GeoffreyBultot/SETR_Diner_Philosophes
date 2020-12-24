@@ -17,7 +17,6 @@ pthread_mutexattr_t mutexattr_Eat_Philosophes[NB_PHILOSOPHES];
 sem_t semSynchroThreadsPhilos;
 
 
-sem_t sem_t_fourchettes[NB_PHILOSOPHES-1];
 pthread_attr_t pthread_attr_philosophes[NB_PHILOSOPHES];
 
 pthread_mutexattr_t pthread_attr_Cout;
@@ -196,7 +195,8 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 	if(nouvelEtat == P_MANGE)
 	{
 
-		while(excluded == idPhilosopheChangeant){};
+		while(excluded == idPhilosopheChangeant){
+			usleep(1);};
 		wantToEat[idPhilosopheChangeant] = true;
 		//On va attendre que ceux de son groupe aient envie de manger
 		//Et que ceux du groupe avant ne mangent plus
@@ -205,6 +205,7 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 		//usleep(100);
 		//std::cout<<"philo "<<idPhilosopheChangeant<<" veut manger"<<std::endl;
 		while(SonGroupeVeutManger == false){
+			usleep(1);
 			SonGroupeVeutManger = true;
 			for(int i = starti; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
 				if(i!=excluded){
@@ -219,6 +220,7 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 		bool tousMangent = false;
 		setPhiloState(idPhilosopheChangeant,nouvelEtat);
 		while(tousMangent == false){
+			usleep(1);
 			tousMangent = true;
 			for(int i = starti; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
 				if(i!=excluded){
@@ -231,6 +233,7 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 		}
 
 		while(AutreGroupeAFiniDeManger == false){
+			usleep(1);
 			AutreGroupeAFiniDeManger = true;
 				for(int i = i_otherGroup; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
 					if(i!=excluded){
@@ -281,31 +284,56 @@ void terminerProgramme()
 {
     int i;
     int sem_value;
-    sem_close(&semSynchroThreadsPhilos);
+    sem_destroy(&semSynchroThreadsPhilos);
+    sem_getvalue(&semSynchroThreadsPhilos, &sem_value);
+	if( sem_value == 0)
+	{
+		std::cout << "[INFO] Semaphore synchro not posted value = " << sem_value << std::endl;
+		std::cout<<"post return : " <<sem_post(&semSynchroThreadsPhilos);
+		sem_getvalue(&semSynchroThreadsPhilos, &sem_value);
+		std::cout <<"  new value : "<< sem_value<<std::endl;
+	}
 
-    for(i=0;i<NB_PHILOSOPHES;i++)
+	if(sem_destroy(&semSynchroThreadsPhilos) != -1)
+		std::cout << "[INFO] semaphore synchro destroyed correctly"<<std::endl;
+	else
+		std::cout << "[WARNING] semaphore synchro error during destroy() " << strerror(errno) <<std::endl;
+
+	for(i=0;i<NB_PHILOSOPHES;i++){
+		pthread_mutex_destroy(&mutex_Eat_Philosophes[i]);
+	}
+	for(i=0;i<NB_PHILOSOPHES;i++){
+
+		sem_getvalue(semFourchettes[i], &sem_value);
+		if( sem_value == 0)
+		{
+			std::cout << "[INFO] Semaphore fourchette " << i << " not posted value = " << sem_value;
+			std::cout<<"post return : " <<sem_post(semFourchettes[i]);
+			sem_getvalue(semFourchettes[i], &sem_value);
+			std::cout <<"  new value : "<< sem_value<<std::endl;
+		}
+
+		if(sem_destroy(semFourchettes[i]) != -1)
+			std::cout << "[INFO] semaphore fourchette " << i << " destroyed correctly"<<std::endl;
+		else
+			std::cout << "[WARNING] semaphore fourchette " << i << " error during destroy() " << strerror(errno) <<std::endl;
+
+	}
+	for(i=0;i<NB_PHILOSOPHES;i++){
+
+	}
+	for(i=0;i<NB_PHILOSOPHES;i++)
     {
-    	pthread_mutex_destroy(&mutex_Eat_Philosophes[i]);
+
     	if(pthread_cancel(threadsPhilosophes[i]) == 0)
 			std::cout << "[INFO] thread philosophe " << i << " canceled successfull"<<std::endl;
 		else
-			std::cout << "[WARNING] thread philosophe " << i << " error during cancel() "<<std::endl;
+			std::cout << "[WARNING] thread philosophe " << i << " error during cancel() "<< strerror(errno) <<std::endl;
 
     	if(pthread_join(threadsPhilosophes[i], NULL) == 0)
     		std::cout << "[INFO] thread philosophe " << i << " join() correctly"<<std::endl;
     	else
-    		std::cout << "[WARNING] thread philosophe " << i << " error during join() "<<std::endl;
-    	sem_getvalue(&sem_t_fourchettes[i], &sem_value);
-    	if( sem_value == 0)
-    	{
-    		std::cout << "[INFO] Semaphore fourchette " << i << "not posted" << std::endl;
-    		sem_post(&sem_t_fourchettes[i]);
-    	}
-
-    	if(sem_close(semFourchettes[i]) == 0)
-    		std::cout << "[INFO] semaphore fourchette " << i << " close correctly"<<std::endl;
-    	else
-    		std::cout << "[WARNING] semaphore fourchette " << i << " error during close() "<<std::endl;
+    		std::cout << "[WARNING] thread philosophe " << i << " error during join() "<< strerror(errno) <<std::endl;
     }
     free(threadsPhilosophes);
     free(semFourchettes);
