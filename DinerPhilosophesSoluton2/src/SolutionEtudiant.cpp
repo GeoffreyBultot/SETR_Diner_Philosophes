@@ -122,7 +122,7 @@ void* vieDuPhilosophe(void* idPtr)
     int max_prio_for_policy;
     pthread_attr_init(&pthread_attr_philosophes[id]);
 	pthread_attr_getschedpolicy(&pthread_attr_philosophes[id], &policy);
-	max_prio_for_policy = 50;// sched_get_priority_max(policy);
+	max_prio_for_policy = 50+id;// sched_get_priority_max(policy);
 	pthread_setschedprio(pthread_self(), max_prio_for_policy);
 	//std::cout<<pthread_setschedprio(pthread_self(), max_prio_for_policy)<<std::endl;
 	//printf(" %s\n", strerror(errno));
@@ -144,10 +144,10 @@ void ViePhilosopheSolution2(int id)
 		sem_getvalue(&semSynchroThreadsPhilos, &value_sema);
 	//std::cout<<"TheadSynchronisé"<<std::endl;
 	actualiserEtAfficherEtatsPhilosophes(id,P_FAIM);
+	actualiserEtAfficherEtatsPhilosophes(id,P_MANGE);
 	sem_wait(semFourchettes[id]); //Acquisition fourchette gauche
 	sem_wait(semFourchettes[ (id+1)%NB_PHILOSOPHES]); //Acquisition fourchette droite
 
-	actualiserEtAfficherEtatsPhilosophes(id,P_MANGE);
 	randomDelay(0,DUREE_MANGE_MAX_S);
 
 	sem_post(semFourchettes[id]); //Relâchement fourchette gauche
@@ -176,107 +176,150 @@ void setPhiloState(int idPhilo, char statePhilo)
 	pthread_mutex_unlock(&mutexEtats);
 }
 
+void afficheStatePhilos(int idPhilosopheChangeant)
+{
+	pthread_mutex_lock(&mutexCout);
+	for (int i=0;i<NB_PHILOSOPHES;i++) {
+		if (i==idPhilosopheChangeant)
+			std::cout << "*";
+		else
+			std::cout << " ";
+		std::cout << getPhiloState(i);
+		if (i==idPhilosopheChangeant)
+			std::cout << "* ";
+		else
+			std::cout << "  ";
+	}
+	std::cout << "          (t=" << difftime(time(NULL), instantDebut) << ")" << std::endl;
+
+	pthread_mutex_unlock(&mutexCout);
+}
+
+
 
 bool wantToEat[NB_PHILOSOPHES] = {false};
+int groupeQuiPeutManger = 0;
 
 void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvelEtat)
 {
 	int starti=0;
+	//
 	int i_otherGroup = 0;
+
 	//std::cout<<"excluded = "<<excluded;
+
 	if(idPhilosopheChangeant%2){ //L'id est impair
-		i_otherGroup = 0;
+		//i_otherGroup = 0;
 		starti=1;
 	}
 	else	{
-		i_otherGroup = 1;
+		//i_otherGroup = 1;
 		starti=0;
 	}
-	if(nouvelEtat == P_MANGE)
+
+
+	switch(nouvelEtat)
 	{
-
-		while(excluded == idPhilosopheChangeant){
-			usleep(1);};
-		wantToEat[idPhilosopheChangeant] = true;
-		//On va attendre que ceux de son groupe aient envie de manger
-		//Et que ceux du groupe avant ne mangent plus
-		bool AutreGroupeAFiniDeManger = false;
-		bool SonGroupeVeutManger = false;
-		//usleep(100);
-		//std::cout<<"philo "<<idPhilosopheChangeant<<" veut manger"<<std::endl;
-		while(SonGroupeVeutManger == false){
-			usleep(1);
-			SonGroupeVeutManger = true;
-			for(int i = starti; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
-				if(i!=excluded){
-					if(wantToEat[i] == false) {
-						SonGroupeVeutManger = false;
-					}
-				}
+		/*______________________________________________________________________________*/
+		/*								LE PHILO A FAIM									*/
+		/*______________________________________________________________________________*/
+	case P_FAIM:
+		{
+			setPhiloState(idPhilosopheChangeant,nouvelEtat);
+			afficheStatePhilos(idPhilosopheChangeant);
+			wantToEat[idPhilosopheChangeant] = true;
+			//Blocage du philo si ce n'est pas à son tour de manger avec son groupe.
+			while( (excluded == idPhilosopheChangeant) || (idPhilosopheChangeant%2 == groupeQuiPeutManger))
+			{
+				//printf("JSUIS %d DANS MA WHILE\n",idPhilosopheChangeant);
 			}
-		}
-		std::cout<<"tout le groupe du philo "<<idPhilosopheChangeant<<" veut manger"<<std::endl;
-
-		bool tousMangent = false;
-		setPhiloState(idPhilosopheChangeant,nouvelEtat);
-		while(tousMangent == false){
-			usleep(1);
-			tousMangent = true;
-			for(int i = starti; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
-				if(i!=excluded){
-					if(getPhiloState(i) != P_MANGE){
-						tousMangent = false;
-					}
-				}
-
-			}
-		}
-
-		while(AutreGroupeAFiniDeManger == false){
-			usleep(1);
-			AutreGroupeAFiniDeManger = true;
-				for(int i = i_otherGroup; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
-					if(i!=excluded){
-						if(getPhiloState(i) == P_MANGE ){
-							AutreGroupeAFiniDeManger = false;
+			bool SonGroupeVeutManger = false;
+			while(SonGroupeVeutManger == false){
+				usleep(1);
+				SonGroupeVeutManger = true;
+				for(int i = starti; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
+					if(i!=excluded && i!= idPhilosopheChangeant){
+						if(wantToEat[i] == false) {
+							SonGroupeVeutManger = false;
 						}
 					}
 				}
 			}
-		//std::cout<<"autre groupe que le philo "<<idPhilosopheChangeant<<" fini de manger"<<std::endl;
+			//std::cout<<"philo numero "<<idPhilosopheChangeant<<" attend que son groupe mange";
+			bool ToutSonGroupeMange = false;
+			while(ToutSonGroupeMange == false)
+			{
+				ToutSonGroupeMange = true;
+				for(int i = starti;i<NB_PHILOSOPHES;i+=2)
+				{
+					if(i!=excluded){
+						if(getPhiloState(i) != P_MANGE)
+						{
+							ToutSonGroupeMange = false;
+						}
+					}
+				}
+			}
+			//std::cout<<"philo numero "<<idPhilosopheChangeant<<" va manger avec ses amis";
+		}
+		break;
+		/*______________________________________________________________________________*/
+		/*								LE PHILO MANGE									*/
+		/*______________________________________________________________________________*/
+	case P_MANGE:
+		{
+			//std::cout<<"je suis dans mange" << idPhilosopheChangeant<<std::endl;
 
-		if(idPhilosopheChangeant == excluded){
-			if(NB_PHILOSOPHES%2){
-				if(idPhilosopheChangeant == NB_PHILOSOPHES-1)
-					excluded = 0;
+			setPhiloState(idPhilosopheChangeant,nouvelEtat);
+			afficheStatePhilos(idPhilosopheChangeant);
+			//Attendre que ceux de son groupe aient envie de manger
+			//std::cout<<"philo numero "<<idPhilosopheChangeant<<" attend les affamés";
+		}
+		//std::cout<<"tout le groupe du philo "<<idPhilosopheChangeant<<" veut manger"<<std::endl;
+
+		break;
+
+		/*______________________________________________________________________________*/
+		/*								LE PHILO PENSE									*/
+		/*______________________________________________________________________________*/
+
+	case P_PENSE:
+		{
+			wantToEat[idPhilosopheChangeant] = false;
+			setPhiloState(idPhilosopheChangeant,nouvelEtat);
+			afficheStatePhilos(idPhilosopheChangeant);
+			bool auMoinsUnMange = false;
+			for(int i = starti; i< NB_PHILOSOPHES;i+=2){//Check la liste du philo
+				if(i!=excluded && i!= idPhilosopheChangeant){
+					if(getPhiloState(i) == P_MANGE){
+						auMoinsUnMange  = true;
+					}
+				}
+			}
+
+			if( (auMoinsUnMange == false) && (idPhilosopheChangeant%2 == groupeQuiPeutManger) ){
+				printf("%d\n",groupeQuiPeutManger);
+				if(groupeQuiPeutManger == 0)
+					groupeQuiPeutManger = 1;
 				else
-					excluded = NB_PHILOSOPHES-1;
+					groupeQuiPeutManger = 0;
+				if(idPhilosopheChangeant == excluded){
+					if(NB_PHILOSOPHES%2){
+						if(idPhilosopheChangeant == NB_PHILOSOPHES-1)
+							excluded = 0;
+						else
+							excluded = NB_PHILOSOPHES-1;
+					}
+				}
 			}
 		}
+		break;
+	default:
+		{
+			exit(EXIT_FAILURE);
+		}
+		break;
 	}
-	else
-	{
-		wantToEat[idPhilosopheChangeant] = false;
-		setPhiloState(idPhilosopheChangeant,nouvelEtat);
-	}
-
-
-    pthread_mutex_lock(&mutexCout);
-    
-    for (int i=0;i<NB_PHILOSOPHES;i++) {
-        if (i==idPhilosopheChangeant)
-            std::cout << "*";
-        else
-            std::cout << " ";
-        std::cout << etatsPhilosophes[i];
-        if (i==idPhilosopheChangeant)
-            std::cout << "* ";
-        else
-            std::cout << "  ";
-    }
-    std::cout << "          (t=" << difftime(time(NULL), instantDebut) << ")" << std::endl;
-
-    pthread_mutex_unlock(&mutexCout);
 }
 
 

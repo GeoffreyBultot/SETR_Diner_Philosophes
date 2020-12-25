@@ -16,7 +16,6 @@
 #define SOLUTION_2
 
 
-
 // États stockés bêtements dans des types char
 #define P_PENSE 'P'
 #define P_FAIM  'F'
