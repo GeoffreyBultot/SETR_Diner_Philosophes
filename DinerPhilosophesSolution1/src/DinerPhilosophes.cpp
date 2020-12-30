@@ -51,6 +51,8 @@ int main(int argc, const char * argv[]) {
     // Fonction appelée lors de la signalisation
     signalAction.sa_handler = &generalSignalHandler;
     // Interception de SIGTERM uniquement
+    if (sigaction(SIGINT, &signalAction, NULL) == -1) // si erreur
+        std::cerr << "Impossible d'intercepter SIGINT !" << std::endl;
     if (sigaction(SIGTERM, &signalAction, NULL) == -1) // si erreur
         std::cerr << "Impossible d'intercepter SIGTERM !" << std::endl;
 
@@ -72,7 +74,7 @@ int main(int argc, const char * argv[]) {
 // Pourrait intercepter et gérer tous les signaux, selon la configuration
 void generalSignalHandler(int signal)
 {
-    if (signal == SIGTERM)
+    if (signal == SIGTERM || signal == SIGINT)
     {
         std::cout << std::endl << "Exécution de terminerProgramme() en cours..." << std::endl;
         terminerProgramme();

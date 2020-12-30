@@ -3025,3 +3025,1031 @@ Invoking: GCC C++ Linker
 g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
 Finished building target: DinerPhilosophesSoluton2
  
+16:37:08 **** Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+16:37:14 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+16:37:26 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+16:37:28 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+16:40:01 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+16:40:03 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:11:09 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:11:14 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:18:47 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:18:49 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:21:16 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:21:19 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:22:48 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:22:50 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:22:58 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:22:59 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:25:37 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:25:39 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:25:55 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:25:56 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:26:41 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:26:44 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:32:24 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:33:18 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:34:00 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:40:01 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:40:54 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:52:01 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:179:18: error: expected initializer before ‘==’ token
+  179 |      int locking == pthread_mutex_trylock(&mutex_Eat_Philosophes[i]);
+      |                  ^~
+../src/SolutionEtudiant.cpp:180:9: error: ‘locking’ was not declared in this scope
+  180 |      if(locking!=0 || locking == EBUSY)
+      |         ^~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+17:52:44 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:53:20 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+17:58:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void ViePhilosopheSolution1(int)’:
+../src/SolutionEtudiant.cpp:229:39: error: cannot convert ‘int*’ to ‘pthread_mutex_t*’
+  229 |      pthread_cond_wait(&run_cond[id], &run_thread_eat[id]);
+      |                                       ^~~~~~~~~~~~~~~~~~~
+      |                                       |
+      |                                       int*
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/ios_base.h:39,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from ../src/SolutionEtudiant.cpp:1:
+/usr/include/pthread.h:987:38: note:   initializing argument 2 of ‘int pthread_cond_wait(pthread_cond_t*, pthread_mutex_t*)’
+  987 |          pthread_mutex_t *__restrict __mutex)
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:00:13 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:02:44 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:138:31: error: no match for ‘operator[]’ (operand types are ‘pthread_cond_t’ and ‘int’)
+  138 |    pthread_cond_wait(&run_cond[id], &run_lock);
+      |                               ^
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:02:52 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:04:43 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:07:33 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:07:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:08:08 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:08:49 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:08:55 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:09:01 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:09:33 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:09:38 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:11:20 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:11:30 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:11:38 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:12:38 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:12:44 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:13:21 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:13:27 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:13:46 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:13:49 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:13:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:19:01 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void terminerProgramme()’:
+../src/SolutionEtudiant.cpp:282:24: error: cannot convert ‘pthread_mutex_t (*)[5]’ to ‘pthread_mutex_t*’
+  282 |     pthread_mutex_lock(&run_lock);
+      |                        ^~~~~~~~~
+      |                        |
+      |                        pthread_mutex_t (*)[5]
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/ios_base.h:39,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from ../src/SolutionEtudiant.cpp:1:
+/usr/include/pthread.h:738:49: note:   initializing argument 1 of ‘int pthread_mutex_lock(pthread_mutex_t*)’
+  738 | extern int pthread_mutex_lock (pthread_mutex_t *__mutex)
+      |                                ~~~~~~~~~~~~~~~~~^~~~~~~
+../src/SolutionEtudiant.cpp:288:26: error: cannot convert ‘pthread_mutex_t (*)[5]’ to ‘pthread_mutex_t*’
+  288 |     pthread_mutex_unlock(&run_lock);
+      |                          ^~~~~~~~~
+      |                          |
+      |                          pthread_mutex_t (*)[5]
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/ios_base.h:39,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from ../src/SolutionEtudiant.cpp:1:
+/usr/include/pthread.h:756:51: note:   initializing argument 1 of ‘int pthread_mutex_unlock(pthread_mutex_t*)’
+  756 | extern int pthread_mutex_unlock (pthread_mutex_t *__mutex)
+      |                                  ~~~~~~~~~~~~~~~~~^~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:19:12 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void terminerProgramme()’:
+../src/SolutionEtudiant.cpp:282:24: error: cannot convert ‘pthread_mutex_t (*)[5]’ to ‘pthread_mutex_t*’
+  282 |     pthread_mutex_lock(&run_lock);
+      |                        ^~~~~~~~~
+      |                        |
+      |                        pthread_mutex_t (*)[5]
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/ios_base.h:39,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from ../src/SolutionEtudiant.cpp:1:
+/usr/include/pthread.h:738:49: note:   initializing argument 1 of ‘int pthread_mutex_lock(pthread_mutex_t*)’
+  738 | extern int pthread_mutex_lock (pthread_mutex_t *__mutex)
+      |                                ~~~~~~~~~~~~~~~~~^~~~~~~
+../src/SolutionEtudiant.cpp:288:26: error: cannot convert ‘pthread_mutex_t (*)[5]’ to ‘pthread_mutex_t*’
+  288 |     pthread_mutex_unlock(&run_lock);
+      |                          ^~~~~~~~~
+      |                          |
+      |                          pthread_mutex_t (*)[5]
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/ios_base.h:39,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from ../src/SolutionEtudiant.cpp:1:
+/usr/include/pthread.h:756:51: note:   initializing argument 1 of ‘int pthread_mutex_unlock(pthread_mutex_t*)’
+  756 | extern int pthread_mutex_unlock (pthread_mutex_t *__mutex)
+      |                                  ~~~~~~~~~~~~~~~~~^~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:19:55 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:20:01 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:20:50 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:20:58 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:21:20 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:201:4: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  201 |    if(i!=philosopheExcluSiImpair)
+      |    ^~
+../src/SolutionEtudiant.cpp:203:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  203 |     pthread_cond_signal(&run_cond);
+      |     ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:21:27 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:21:36 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:21:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:23:36 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:23:41 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:23:50 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:24:48 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:204:28: error: cannot convert ‘pthread_cond_t’ to ‘pthread_cond_t*’
+  204 |     pthread_cond_broadcast(run_cond);
+      |                            ^~~~~~~~
+      |                            |
+      |                            pthread_cond_t
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/ios_base.h:39,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from ../src/SolutionEtudiant.cpp:1:
+/usr/include/pthread.h:978:52: note:   initializing argument 1 of ‘int pthread_cond_broadcast(pthread_cond_t*)’
+  978 | extern int pthread_cond_broadcast (pthread_cond_t *__cond)
+      |                                    ~~~~~~~~~~~~~~~~^~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:24:56 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* sol1_Master_Scheduler(void*)’:
+../src/SolutionEtudiant.cpp:204:28: error: cannot convert ‘pthread_cond_t’ to ‘pthread_cond_t*’
+  204 |     pthread_cond_broadcast(run_cond);
+      |                            ^~~~~~~~
+      |                            |
+      |                            pthread_cond_t
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/ios_base.h:39,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from ../src/SolutionEtudiant.cpp:1:
+/usr/include/pthread.h:978:52: note:   initializing argument 1 of ‘int pthread_cond_broadcast(pthread_cond_t*)’
+  978 | extern int pthread_cond_broadcast (pthread_cond_t *__cond)
+      |                                    ~~~~~~~~~~~~~~~~^~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:25:00 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:25:02 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:25:41 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:29:29 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:30:47 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:30:56 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:31:18 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:31:25 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:31:32 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:31:43 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:31:47 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:32:40 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:32:48 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:34:20 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:36:12 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:36:14 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:37:03 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:37:09 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:37:56 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:39:46 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:39:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:44:12 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:45:33 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:45:39 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:46:09 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:46:34 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:46:38 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:46:54 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:46:58 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:47:39 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:47:42 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:47:56 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:59:55 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+19:00:21 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+19:02:00 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+19:02:11 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+19:02:48 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+19:07:18 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+19:13:20 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+19:13:23 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
