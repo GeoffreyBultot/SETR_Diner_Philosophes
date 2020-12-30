@@ -1793,3 +1793,1235 @@ Finished building target: DinerPhilosophesSoluton2
 22:38:52 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
 make all 
 make: rien à faire pour « all ».
+22:41:17 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+22:41:22 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+22:42:15 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:236:9: warning: unused variable ‘SonGroupeVeutManger’ [-Wunused-variable]
+  236 |    bool SonGroupeVeutManger = false;
+      |         ^~~~~~~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+22:42:29 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:236:9: warning: unused variable ‘SonGroupeVeutManger’ [-Wunused-variable]
+  236 |    bool SonGroupeVeutManger = false;
+      |         ^~~~~~~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:239:9: warning: unused variable ‘ToutSonGroupeMange’ [-Wunused-variable]
+  239 |    bool ToutSonGroupeMange = false;
+      |         ^~~~~~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+22:43:40 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+22:43:42 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:01:24 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:01:26 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:02:52 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:02:54 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void ViePhilosopheSolution2(int)’:
+../src/SolutionEtudiant.cpp:150:80: error: expected ‘;’ before ‘]’ token
+  150 |  std::cout<<"philo "<<id<<" take forks "<<id<< " and " << (id+1)%NB_PHILOSOPHES]<<std::endl;
+      |                                                                                ^
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+23:03:23 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:03:24 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:05:54 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:05:56 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:07:20 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:07:22 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:07:47 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:07:48 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:08:09 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:08:11 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:09:29 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:09:30 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:10:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:10:55 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:11:28 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:11:30 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:11:58 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:11:59 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:12:28 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:12:29 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+23:15:05 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:15:06 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+23:15:11 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:15:12 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:17:16 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+23:18:17 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:18:18 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:19:09 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:19:10 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:19:47 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:19:48 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:20:16 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:20:17 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:31:41 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:32:10 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:32:12 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+16:18:17 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+16:19:03 **** Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+16:19:04 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+16:19:19 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+16:19:20 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+16:19:25 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+16:19:27 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+16:20:15 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+16:20:16 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+16:31:10 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:34:38 **** Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:34:42 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:34:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:34:54 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:35:09 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:35:10 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:36:31 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:36:35 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:277:7: error: ‘auMoinsUnMange’ was not declared in this scope
+  277 |       auMoinsUnMange  = true;
+      |       ^~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:281:9: error: ‘auMoinsUnMange’ was not declared in this scope
+  281 |    if( (auMoinsUnMange == false) ){
+      |         ^~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:297:9: warning: unused variable ‘auMoinsUnMange’ [-Wunused-variable]
+  297 |    bool auMoinsUnMange = false;
+      |         ^~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+17:37:03 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:37:05 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:298:9: error: redeclaration of ‘bool auMoinsUnMange’
+  298 |    bool auMoinsUnMange = false;
+      |         ^~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:273:9: note: ‘bool auMoinsUnMange’ previously declared here
+  273 |    bool auMoinsUnMange = false;
+      |         ^~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+17:37:13 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:37:14 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:298:9: error: redeclaration of ‘bool auMoinsUnMange’
+  298 |    bool auMoinsUnMange = false;
+      |         ^~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:273:9: note: ‘bool auMoinsUnMange’ previously declared here
+  273 |    bool auMoinsUnMange = false;
+      |         ^~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+17:37:31 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:37:34 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:38:45 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:38:49 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:39:05 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:39:09 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:39:22 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:39:24 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:39:52 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:40:21 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:40:39 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:46:31 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:46:32 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:49:32 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:49:33 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:49:37 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+17:49:46 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:207:6: warning: unused variable ‘i_otherGroup’ [-Wunused-variable]
+  207 |  int i_otherGroup = 0;
+      |      ^~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+22:39:07 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+22:39:10 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:31:10 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:35:06 **** Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:35:08 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:37:04 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:37:05 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:37:19 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:37:21 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:40:03 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:40:07 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:44:58 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:44:59 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:50:47 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:50:49 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:238:4: error: expected ‘,’ or ‘;’ before ‘while’
+  238 |    while(wantToEat[i]==false)
+      |    ^~~~~
+../src/SolutionEtudiant.cpp:222:9: warning: unused variable ‘SonGroupeVeutManger’ [-Wunused-variable]
+  222 |    bool SonGroupeVeutManger = false;
+      |         ^~~~~~~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:237:8: warning: unused variable ‘i’ [-Wunused-variable]
+  237 |    int i = starti
+      |        ^
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:51:03 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:51:05 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:222:9: warning: unused variable ‘SonGroupeVeutManger’ [-Wunused-variable]
+  222 |    bool SonGroupeVeutManger = false;
+      |         ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:52:05 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:52:07 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:222:9: warning: unused variable ‘SonGroupeVeutManger’ [-Wunused-variable]
+  222 |    bool SonGroupeVeutManger = false;
+      |         ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:55:54 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:55:57 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:222:9: warning: unused variable ‘SonGroupeVeutManger’ [-Wunused-variable]
+  222 |    bool SonGroupeVeutManger = false;
+      |         ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:58:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:58:55 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:222:9: warning: unused variable ‘SonGroupeVeutManger’ [-Wunused-variable]
+  222 |    bool SonGroupeVeutManger = false;
+      |         ^~~~~~~~~~~~~~~~~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+22:01:41 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+22:01:43 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+22:05:32 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+22:05:33 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+22:33:41 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+22:33:42 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+22:34:25 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+22:34:27 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:24:18 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:24:19 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:24:42 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:24:44 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:26:42 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:26:43 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:29:57 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:29:58 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:31:21 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:31:23 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:31:49 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:31:50 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:32:21 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:32:23 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:35:22 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:35:23 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:36:04 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:36:05 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:291:24: error: expected ‘)’ before ‘{’ token
+  291 |     if(NB_PHILOSOPHES%2{
+      |       ~                ^
+      |                        )
+../src/SolutionEtudiant.cpp:297:4: error: expected primary-expression before ‘}’ token
+  297 |    }//std::cout<<"philo : "<<idPhilosopheChangeant<< "new exluded : "<<excluded<<std::endl;
+      |    ^
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+23:36:11 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:36:13 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:36:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:36:54 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+23:37:24 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+23:37:25 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 

@@ -21,7 +21,7 @@
 #define P_FAIM  'F'
 #define P_MANGE 'M'
 
-#define NB_PHILOSOPHES 5
+#define NB_PHILOSOPHES 16
 
 #define DUREE_MANGE_MAX_S   1.5 // en secondes
 #define DUREE_PENSE_MAX_S   5.5 // idem
