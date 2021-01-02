@@ -10,6 +10,9 @@
 
 #include "Header_Prof.h"
 
+#include <sys/time.h>
+#include "string.h"
+#include "sys/times.h"
 pthread_mutex_t mutex_Eat_Philosophes[NB_PHILOSOPHES];
 pthread_mutexattr_t mutexattr_Eat_Philosophes[NB_PHILOSOPHES];
 sem_t semSynchroThreadsPhilos;
@@ -26,8 +29,6 @@ int excluded = NB_PHILOSOPHES;
 int run_thread_eat[NB_PHILOSOPHES] = {0};
 pthread_mutex_t run_lock[NB_PHILOSOPHES] = {PTHREAD_MUTEX_INITIALIZER};
 pthread_cond_t run_cond = PTHREAD_COND_INITIALIZER;
-
-
 
 void setPhiloState(int idPhilo, char statePhilo);
 void afficheStatePhilos(int idPhilosopheChangeant);
@@ -93,15 +94,14 @@ void initialisation()
 	}
 
 	instantDebut = time(NULL);
-	/*for(int i = 0;i<NB_PHILOSOPHES;i++){
-		setPhiloState(i,P_FAIM);
-		afficheStatePhilos(i);
-	}*/
 
 	for(int i = 1;i<NB_PHILOSOPHES;i+=2){
-		pthread_mutex_lock(&run_lock[i]);
-		run_thread_eat[i] = 1;
-		pthread_mutex_unlock(&run_lock[i]);
+		if(i!=excluded){
+			pthread_mutex_lock(&run_lock[i]);
+			run_thread_eat[i] = 1;
+			pthread_mutex_unlock(&run_lock[i]);
+		}
+
 	}
 	sem_post(&semSynchroThreadsPhilos);
 }
@@ -115,34 +115,42 @@ void randomDelay(float f_min_Sec, float f_max_Sec)
 	random = (rand())%((int)f_max_Sec*1000000);
 	if( (float)random < (f_min_Sec*1000000))
 		random = int(f_min_Sec*1000000);
+	else if((float)random > (f_max_Sec*1000000))
+		random = int(f_max_Sec*1000000);
 	usleep(random);
 }
+struct timeval t_second[NB_PHILOSOPHES], t_first[NB_PHILOSOPHES];
 
 void* vieDuPhilosophe(void* idPtr)
 {
 	int id = * ((int*)idPtr);
+	int gauche = id;
+	int droite = (id+1)%NB_PHILOSOPHES;
     pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
     pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
     while(1)
     {
     	int value_sema = 0;
-		//std::cout<<"attente de synchro"<<std::endl;
 		while(value_sema == 0)//Tant que le semaphore est pris
 			sem_getvalue(&semSynchroThreadsPhilos, &value_sema);
-		//std::cout<<"TheadSynchronisé"<<std::endl;
-		actualiserEtAfficherEtatsPhilosophes(id,P_FAIM);
-
+		gettimeofday(&t_first[id],NULL);
+				actualiserEtAfficherEtatsPhilosophes(id,P_FAIM);
+		gettimeofday(&t_second[id],NULL);
+		int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+		pthread_mutex_lock(&mutexCout);
+		std::cout <<id<<";"<< diff << std::endl;
+		pthread_mutex_unlock(&mutexCout);
+		sem_wait(semFourchettes[gauche]); //Acquisition fourchette gauche
+		sem_wait(semFourchettes[droite]); //Acquisition fourchette droite
 		actualiserEtAfficherEtatsPhilosophes(id,P_MANGE);
-		sem_wait(semFourchettes[id]); //Acquisition fourchette gauche
-		sem_wait(semFourchettes[ (id+1)%NB_PHILOSOPHES]); //Acquisition fourchette droite
-		//std::cout<<"philo "<<id<<" take forks "<<id<< " and " << (id+1)%NB_PHILOSOPHES<<std::endl;
 		randomDelay(0,DUREE_MANGE_MAX_S);
-
-		sem_post(semFourchettes[id]); //Relâchement fourchette gauche
-		sem_post(semFourchettes[(id+1)%NB_PHILOSOPHES]); //Relâchement fourchette droite
+		//usleep(DUREE_MANGE_MAX_S*1000000);
+		sem_post(semFourchettes[gauche]); //Relâchement fourchette gauche
+		sem_post(semFourchettes[droite]); //Relâchement fourchette droite
 		actualiserEtAfficherEtatsPhilosophes(id,P_PENSE);
-
 		randomDelay(0,DUREE_PENSE_MAX_S);
+		//usleep(DUREE_PENSE_MAX_S*1000000);
+
         pthread_testcancel();
     }
     return NULL;
@@ -168,7 +176,7 @@ void setPhiloState(int idPhilo, char statePhilo)
 void afficheStatePhilos(int idPhilosopheChangeant)
 {
 	pthread_mutex_lock(&mutexCout);
-	for (int i=0;i<NB_PHILOSOPHES;i++) {
+	/*for (int i=0;i<NB_PHILOSOPHES;i++) {
 		if (i==idPhilosopheChangeant)
 			std::cout << "*";
 		else
@@ -180,15 +188,14 @@ void afficheStatePhilos(int idPhilosopheChangeant)
 			std::cout << "  ";
 	}
 	std::cout << "          (t=" << difftime(time(NULL), instantDebut) << ")" << std::endl;
-
+	*/
 	pthread_mutex_unlock(&mutexCout);
 }
 
 
 
-bool wantToEat[NB_PHILOSOPHES] = {false};
 int groupeQuiPeutManger = 1;
-
+int cptr_pense = 0;
 void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvelEtat)
 {
 	switch(nouvelEtat)
@@ -199,12 +206,27 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 	case P_FAIM:
 		{
 			//Si il a faim on va le faire attendre qu'il puisse manger
-
-			//Dans ce cas c'est à son tour de manger donc on va le mettre en "mange"
 			setPhiloState(idPhilosopheChangeant,nouvelEtat);
 			afficheStatePhilos(idPhilosopheChangeant);
 
 			//LE PHILO A FAIM DONC ON LE FAIT ATTENDRE SON TOUR !
+			bool tousPresents = true;
+			for(int i = groupeQuiPeutManger ; i<NB_PHILOSOPHES;i+=2){
+				if(getPhiloState(i) != P_FAIM){
+					tousPresents = false;
+				}
+			}
+			if(tousPresents)
+			{
+				for(int i = groupeQuiPeutManger ; i<NB_PHILOSOPHES;i+=2){
+					if(i!=excluded){
+						pthread_mutex_lock(&run_lock[i]);
+						run_thread_eat[i] = 1;
+						pthread_mutex_unlock(&run_lock[i]);
+					}
+				}
+			}
+			pthread_cond_broadcast(&run_cond);
 
 			pthread_mutex_lock(&run_lock[idPhilosopheChangeant]);
 			while (!run_thread_eat[idPhilosopheChangeant])
@@ -220,7 +242,6 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 		/*______________________________________________________________________________*/
 	case P_MANGE:
 		{
-			//std::cout<<"je suis dans mange" << idPhilosopheChangeant<<std::endl;
 			setPhiloState(idPhilosopheChangeant,nouvelEtat);
 			afficheStatePhilos(idPhilosopheChangeant);
 		}
@@ -232,20 +253,13 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 
 	case P_PENSE:
 		{
-			bool auMoinsUnMange = false;
-			wantToEat[idPhilosopheChangeant] = false;
 			setPhiloState(idPhilosopheChangeant,nouvelEtat);
-						afficheStatePhilos(idPhilosopheChangeant);
+			afficheStatePhilos(idPhilosopheChangeant);
+			cptr_pense++;
 
-			for(int i = 0; i< NB_PHILOSOPHES;i++){//Check la liste du philo
-					if( (getPhiloState(i) == P_MANGE) ){
-						auMoinsUnMange  = true;
-					}
-			}
-
-
-			if( (auMoinsUnMange == false) ){
-				if(groupeQuiPeutManger == 0)
+			if(cptr_pense == (NB_PHILOSOPHES/2) ){
+				cptr_pense = 0;
+				if(idPhilosopheChangeant%2 == 0)
 					groupeQuiPeutManger = 1;
 				else
 					groupeQuiPeutManger = 0;
@@ -255,26 +269,6 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 						excluded = 0;
 					else if(excluded == 0)
 						excluded = NB_PHILOSOPHES-1;
-				}
-				//std::cout<<"le groupe qui peut manger mtn est le "<<groupeQuiPeutManger<<std::endl;
-				//Attendre ceux qui doivent manger
-				bool ilsOntFaim = false;
-				while(ilsOntFaim == false){
-					ilsOntFaim = true;
-					for(int i = groupeQuiPeutManger ; i < NB_PHILOSOPHES ; i+=2){
-						if(i!=excluded){
-							if(getPhiloState(i) != P_FAIM){
-								ilsOntFaim = false;
-							}
-						}
-					}
-				}
-				for(int i = groupeQuiPeutManger ; i < NB_PHILOSOPHES; i+=2){
-					pthread_mutex_lock(&run_lock[i]);
-					if(i!=excluded){
-						run_thread_eat[i] = 1;
-					}
-					pthread_mutex_unlock(&run_lock[i]);
 				}
 				pthread_cond_broadcast(&run_cond);
 			}
@@ -327,9 +321,7 @@ void terminerProgramme()
 		else
 			std::cout << "[WARNING] semaphore fourchette " << i << " error during destroy() " << strerror(errno) <<std::endl;
 	}
-	for(i=0;i<NB_PHILOSOPHES;i++){
 
-	}
 	for(i=0;i<NB_PHILOSOPHES;i++)
     {
 
@@ -337,7 +329,8 @@ void terminerProgramme()
 			std::cout << "[INFO] thread philosophe " << i << " canceled successfull"<<std::endl;
 		else
 			std::cout << "[WARNING] thread philosophe " << i << " error during cancel() "<< strerror(errno) <<std::endl;
-
+    }
+	for(i=0;i<NB_PHILOSOPHES;i++){
     	if(pthread_join(threadsPhilosophes[i], NULL) == 0)
     		std::cout << "[INFO] thread philosophe " << i << " join() correctly"<<std::endl;
     	else
