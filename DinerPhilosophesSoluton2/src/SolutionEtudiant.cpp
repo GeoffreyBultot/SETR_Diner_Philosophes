@@ -1,81 +1,111 @@
-#include <iostream>
-#include <ctime> // time_t time()
-#include <unistd.h> // entre autres : usleep
-#include <semaphore.h>
-#include <pthread.h>
-#include <errno.h>
-#include <string.h>
-
+#include <iostream>		//
+#include <ctime> 		// time_t time()
+#include <unistd.h> 	// entre autres : usleep
+#include <semaphore.h>	// Utilisation sémaphores
+#include <pthread.h>	// Utilisation pthread
+#include <errno.h>		// Affichage erreurs objets posix
+#include <string.h>		// entre autres : strerror
 #include "SolutionEtudiant.hpp"
-
 #include "Header_Prof.h"
+#include <sys/time.h>	// gettimeOfTheDay
 
-#include <sys/time.h>
-#include "string.h"
-#include "sys/times.h"
-pthread_mutex_t mutex_Eat_Philosophes[NB_PHILOSOPHES];
-pthread_mutexattr_t mutexattr_Eat_Philosophes[NB_PHILOSOPHES];
+/*Sémaphore de synchronisation*/
 sem_t semSynchroThreadsPhilos;
 
+/*Mutexs pour protéger les variables:
+ * Groupe qui peut manger
+ * Cptr_pense*/
+pthread_mutex_t mutex_GroupeQuiPeutManger;
+pthread_mutex_t mutex_cptrPense;
 
+/*Attributs (au besoin)*/
 pthread_attr_t pthread_attr_philosophes[NB_PHILOSOPHES];
-
+pthread_mutexattr_t pthread_mutex_attr_GroupeQuiPeutManger;
+pthread_mutexattr_t pthread_mutex_attr_cptrPense;
 pthread_mutexattr_t pthread_attr_Cout;
 pthread_mutexattr_t pthread_attr_Etats;
+
+/*Tableau qui contient l'id des philosophes*/
 int * t_idx_philos;
-int excluded = NB_PHILOSOPHES;
+/*Philosophe qui sera exclu une fois sur deux si le nombre de philosophes est impair*/
+int philosopheExcluSiImpair = NB_PHILOSOPHES;
+/*Groupe qui peut manger : les paires (0) ou les impaires (1)*/
+int groupeQuiPeutManger = 1;
+/*Nombre de philosophes qui vont penser*/
+int cptr_pense = 0;
+/*Utilisé comme variable condition : permet de savoir si un philosophe peut manger*/
+bool run_thread_eat[NB_PHILOSOPHES] = {false};
+/*Pour l'acquisition des temps caractéristiques*/
+struct timeval t_second[NB_PHILOSOPHES], t_first[NB_PHILOSOPHES];
 
 
-int run_thread_eat[NB_PHILOSOPHES] = {0};
-pthread_mutex_t run_lock[NB_PHILOSOPHES] = {PTHREAD_MUTEX_INITIALIZER};
+
+/*Mutex et conditions pour les attentes passives (faim) des philosophes*/
+pthread_mutexattr_t mutexattr_run_thread_eat[NB_PHILOSOPHES];
+pthread_mutex_t mutex_run_thread_eat[NB_PHILOSOPHES] = {PTHREAD_MUTEX_INITIALIZER};
 pthread_cond_t run_cond = PTHREAD_COND_INITIALIZER;
 
+/*Fonctions permettant d'écrire et de lire des variables en les protégeant avec des mutex */
 void setPhiloState(int idPhilo, char statePhilo);
 void afficheStatePhilos(int idPhilosopheChangeant);
+void setGroupeQuiPeutManger(int groupe);
+int getGroupeQuiPeutManger();
 
+
+/*@brief cette fonction permet d'initiliser le Diner des philosophes
+ * @return void*/
 void initialisation()
 {
 	sched_param schedparam;
 	int PID = getpid();
-	threadsPhilosophes = (pthread_t*)malloc(NB_PHILOSOPHES * sizeof(pthread_t));
-	semFourchettes = (sem_t**)malloc(NB_PHILOSOPHES * sizeof(sem_t*));
-	etatsPhilosophes = (char*)malloc(NB_PHILOSOPHES * sizeof(char));
-	t_idx_philos = (int*)malloc(NB_PHILOSOPHES *sizeof(int));
+	/*Allocations dynamiques de tableaux sur le tas*/
+	threadsPhilosophes 	= (pthread_t*)malloc(NB_PHILOSOPHES * sizeof(pthread_t));
+	semFourchettes 		= (sem_t**)malloc(NB_PHILOSOPHES * sizeof(sem_t*));
+	etatsPhilosophes 	= (char*)malloc(NB_PHILOSOPHES * sizeof(char));
+	t_idx_philos 		= (int*)malloc(NB_PHILOSOPHES *sizeof(int));
 
 	/*HIGH PRIORITY AND SCHED FIFO*/
 	sched_getparam(PID,&schedparam);
 	schedparam.sched_priority = 80;
-	std::cout<<sched_setscheduler(PID,SCHED_FIFO,&schedparam)<<std::endl;
-	printf(" %s\n", strerror(errno));
+
+	/*Initialisation des mutexs*/
 	mutexCout = PTHREAD_MUTEX_INITIALIZER;
 	mutexEtats = PTHREAD_MUTEX_INITIALIZER;
+	mutex_GroupeQuiPeutManger = PTHREAD_MUTEX_INITIALIZER;
+	mutex_cptrPense = PTHREAD_MUTEX_INITIALIZER;
+
+	pthread_mutex_init(&mutex_GroupeQuiPeutManger, &pthread_mutex_attr_GroupeQuiPeutManger);
+	pthread_mutex_init(&mutex_cptrPense, &pthread_mutex_attr_cptrPense);
 	pthread_mutex_init(&mutexCout, &pthread_attr_Cout);
 	pthread_mutex_init(&mutexEtats, &pthread_attr_Etats);
-
-	instantDebut = time(NULL);
+	/*Si on a un nombre de philosophes impairs, le premier qui sera exclu sera le 0
+	 * Sinon, ce sera le N philosophe (donc aucun)*/
 	if(NB_PHILOSOPHES%2)
-		excluded = 0;
-	/*Create synchro threads philos*/
-	if( sem_init( &semSynchroThreadsPhilos, 0, 0) == 0)//SemSynchro semaphores pris par defaut
+		philosopheExcluSiImpair = 0;
+	else
+		philosopheExcluSiImpair = NB_PHILOSOPHES;
+
+	/*semaphore permettant d'arrêter les philosophes dans leur état PENSE
+	 * Le sémaphore est pris par défaut et relâché après initialisation*/
+	if( sem_init( &semSynchroThreadsPhilos, 0, 0) == 0)
 		std::cout << "[INFO] semaphore semSynchroThreadsPhilos initialized" << std::endl;
 	else
 		std::cout << "[WARNING] semaphore semSynchroThreadsPhilos not initialized " << std::endl;
 
-
+	/*Initilise les mutexs pour la variable condition*/
 	for(int i=0;i<NB_PHILOSOPHES;i++)
 	{
-		/*Init mutex eat philos*/
-		mutex_Eat_Philosophes[i] = PTHREAD_MUTEX_INITIALIZER;
-		if( pthread_mutex_init(&mutex_Eat_Philosophes[i], &mutexattr_Eat_Philosophes[i]) == 0)//Fourchettes lachees par defaut
-			std::cout << "[INFO] semaphore semSynchroThreadsPhilos initialized" << std::endl;
+		if( pthread_mutex_init(&mutex_run_thread_eat[i], &mutexattr_run_thread_eat[i]) == 0)//Fourchettes lachees par defaut
+			std::cout << "[INFO] mutex run thread" << i << "initialized" << std::endl;
 		else
-			std::cout << "[WARNING] semaphore semSynchroThreadsPhilos not initialized " << std::endl;
+			std::cout << "[WARNING] mutex run thread" << i << "not initialized " << std::endl;
 		setPhiloState(i,P_PENSE);
 	}
 
+	/*Initialise les sémaphore des fourchettes*/
 	for(int i=0;i<NB_PHILOSOPHES;i++)
 	{
-		/*Init sem forks philos*/
+		/*allocation dynamique de chaque fourchette*/
 		semFourchettes[i] = (sem_t*)malloc(sizeof(sem_t));
 		if( sem_init( semFourchettes[i], 0, 1) == 0)//Fourchettes lachees par defaut
 			std::cout << "[INFO] semaphore Fourchette " <<i<<" initialized" << std::endl;
@@ -84,29 +114,32 @@ void initialisation()
 		t_idx_philos[i] = i;
 	}
 
+	/*Personne n'a le droit de manger au départ*/
+	for(int i = 0;i<NB_PHILOSOPHES;i++){
+		pthread_mutex_lock(&mutex_run_thread_eat[i]);
+		run_thread_eat[i] = false;
+		pthread_mutex_unlock(&mutex_run_thread_eat[i]);
+	}
+
+	/*Crée les threads représentant les philosophes*/
 	for(int i=0;i<NB_PHILOSOPHES;i++)
 	{
-		/*Create threads philosophes*/
 		if(pthread_create( &threadsPhilosophes[i], &(pthread_attr_philosophes[i]), &vieDuPhilosophe, &(t_idx_philos[i])) == 0)
 			std::cout<<"[INFO] Thread philosophe " <<i<< " created"<<std::endl;
 		else
 			std::cout<<"[WARNING] Thread philosophe " <<i<< " not created"<<std::endl;
 	}
-
+	/*Pour l'affichage du temps*/
 	instantDebut = time(NULL);
 
-	for(int i = 1;i<NB_PHILOSOPHES;i+=2){
-		if(i!=excluded){
-			pthread_mutex_lock(&run_lock[i]);
-			run_thread_eat[i] = 1;
-			pthread_mutex_unlock(&run_lock[i]);
-		}
-
-	}
+	/*Libère les threads*/
 	sem_post(&semSynchroThreadsPhilos);
 }
 
-
+/*@brief fonction qui crée un délais aléatoire entre f_min_sec et f_max_sec
+ *@param[in] f_max_Sec
+ *@param[in] f_min_Sec
+ *@return void */
 void randomDelay(float f_min_Sec, float f_max_Sec)
 {
 	int random;
@@ -119,8 +152,10 @@ void randomDelay(float f_min_Sec, float f_max_Sec)
 		random = int(f_max_Sec*1000000);
 	usleep(random);
 }
-struct timeval t_second[NB_PHILOSOPHES], t_first[NB_PHILOSOPHES];
 
+/*@brief thread représentat la vie d'un philosophe
+ * @param[in] idPtr
+ * @return void* */
 void* vieDuPhilosophe(void* idPtr)
 {
 	int id = * ((int*)idPtr);
@@ -133,12 +168,12 @@ void* vieDuPhilosophe(void* idPtr)
     	int value_sema = 0;
 		while(value_sema == 0)//Tant que le semaphore est pris
 			sem_getvalue(&semSynchroThreadsPhilos, &value_sema);
-		gettimeofday(&t_first[id],NULL);
-				actualiserEtAfficherEtatsPhilosophes(id,P_FAIM);
-		gettimeofday(&t_second[id],NULL);
-		int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+		//gettimeofday(&t_first[id],NULL);
+		actualiserEtAfficherEtatsPhilosophes(id,P_FAIM);
+		//gettimeofday(&t_second[id],NULL);
+		//int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
 		pthread_mutex_lock(&mutexCout);
-		std::cout <<id<<";"<< diff << std::endl;
+		//std::cout <<id<<";"<< diff << std::endl;
 		pthread_mutex_unlock(&mutexCout);
 		sem_wait(semFourchettes[gauche]); //Acquisition fourchette gauche
 		sem_wait(semFourchettes[droite]); //Acquisition fourchette droite
@@ -156,6 +191,10 @@ void* vieDuPhilosophe(void* idPtr)
     return NULL;
 }
 
+/*@brief cette fonction permet de récupérer l'état d'un philosophe avec son id (mutex protection)
+ * @param[in] idPhilo
+ * return char
+ * */
 char getPhiloState(int idPhilo)
 {
 	char stateToReturn = 0 ;
@@ -165,7 +204,10 @@ char getPhiloState(int idPhilo)
 	return stateToReturn;
 }
 
-
+/*@brief cette fonction permet mettre à jour l'état d'un philosophe (mutex protection)
+ * @param[in] idPhilo
+ * return char
+ * */
 void setPhiloState(int idPhilo, char statePhilo)
 {
 	pthread_mutex_lock(&mutexEtats);
@@ -173,10 +215,37 @@ void setPhiloState(int idPhilo, char statePhilo)
 	pthread_mutex_unlock(&mutexEtats);
 }
 
+/*@brief cette fonction permet mettre à jour le groupe qui peut manger (mutex protection)
+ * @param[in] groupe
+ * return void
+ * */
+void setGroupeQuiPeutManger(int groupe)
+{
+	pthread_mutex_lock(&mutex_GroupeQuiPeutManger);
+	groupeQuiPeutManger = groupe;
+	pthread_mutex_unlock(&mutex_GroupeQuiPeutManger);
+}
+
+/*@brief cette fonction permet de savoir quel groupe peut manger (mutex protection)
+ * return int
+ * */
+int getGroupeQuiPeutManger()
+{
+	int ret;
+	pthread_mutex_lock(&mutex_GroupeQuiPeutManger);
+	ret = groupeQuiPeutManger;
+	pthread_mutex_unlock(&mutex_GroupeQuiPeutManger);
+	return ret;
+}
+
+/*@brief cette fonction permet d'afficher l'état des philosophes à l'intant t avec mutex protection sur std::cout
+ * @param[in] idPhilosopheChangeant
+ * return void
+ * */
 void afficheStatePhilos(int idPhilosopheChangeant)
 {
 	pthread_mutex_lock(&mutexCout);
-	/*for (int i=0;i<NB_PHILOSOPHES;i++) {
+	for (int i=0;i<NB_PHILOSOPHES;i++) {
 		if (i==idPhilosopheChangeant)
 			std::cout << "*";
 		else
@@ -188,58 +257,62 @@ void afficheStatePhilos(int idPhilosopheChangeant)
 			std::cout << "  ";
 	}
 	std::cout << "          (t=" << difftime(time(NULL), instantDebut) << ")" << std::endl;
-	*/
+
 	pthread_mutex_unlock(&mutexCout);
 }
 
-
-
-int groupeQuiPeutManger = 1;
-int cptr_pense = 0;
+/*@brief cette fonction appelée par chaque philosophe permet de pendre des décisions sur le blocage ou non de ceux-ci.
+ * La fonction actualise et affiche égelement l'état des philosophes dans la console;
+ * @param[in] idPhilosopheChangeant
+ * @param[in] nouvelEtat
+ * return void
+ * */
 void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvelEtat)
 {
 	switch(nouvelEtat)
 	{
-		/*______________________________________________________________________________*/
-		/*								LE PHILO A FAIM									*/
-		/*______________________________________________________________________________*/
+	/*___________________________________________________________________*/
+	/*                           LE PHILO A FAIM                         */
+	/*___________________________________________________________________*/
 	case P_FAIM:
 		{
-			//Si il a faim on va le faire attendre qu'il puisse manger
+			/*Mise à jour de l'*/
 			setPhiloState(idPhilosopheChangeant,nouvelEtat);
 			afficheStatePhilos(idPhilosopheChangeant);
 
 			//LE PHILO A FAIM DONC ON LE FAIT ATTENDRE SON TOUR !
-			bool tousPresents = true;
-			for(int i = groupeQuiPeutManger ; i<NB_PHILOSOPHES;i+=2){
-				if(getPhiloState(i) != P_FAIM){
-					tousPresents = false;
-				}
+			/*Regarde si tout le groupe a faim*/
+			bool tousLeGroupeAFaim = true;
+			for(int i = getGroupeQuiPeutManger() ; i<NB_PHILOSOPHES;i+=2){
+				if(i!=philosopheExcluSiImpair){
+					if(getPhiloState(i) != P_FAIM){
+					tousLeGroupeAFaim = false;
+				}}
 			}
-			if(tousPresents)
-			{
-				for(int i = groupeQuiPeutManger ; i<NB_PHILOSOPHES;i+=2){
-					if(i!=excluded){
-						pthread_mutex_lock(&run_lock[i]);
-						run_thread_eat[i] = 1;
-						pthread_mutex_unlock(&run_lock[i]);
+			/*Si tout le groupe a faim, mise à jour des variables conditionnelles*/
+			if(tousLeGroupeAFaim){
+				for(int i = getGroupeQuiPeutManger() ; i<NB_PHILOSOPHES;i+=2){
+					if(i!=philosopheExcluSiImpair){
+						pthread_mutex_lock(&mutex_run_thread_eat[i]);
+						run_thread_eat[i] = true;
+						pthread_mutex_unlock(&mutex_run_thread_eat[i]);
 					}
 				}
+				pthread_cond_broadcast(&run_cond);
 			}
-			pthread_cond_broadcast(&run_cond);
 
-			pthread_mutex_lock(&run_lock[idPhilosopheChangeant]);
+			pthread_mutex_lock(&mutex_run_thread_eat[idPhilosopheChangeant]);
 			while (!run_thread_eat[idPhilosopheChangeant])
 			{
-				pthread_cond_wait(&run_cond, &run_lock[idPhilosopheChangeant]);
+				pthread_cond_wait(&run_cond, &mutex_run_thread_eat[idPhilosopheChangeant]);
 			}
-			run_thread_eat[idPhilosopheChangeant] = 0;
-			pthread_mutex_unlock(&run_lock[idPhilosopheChangeant]);
+			run_thread_eat[idPhilosopheChangeant] = false;
+			pthread_mutex_unlock(&mutex_run_thread_eat[idPhilosopheChangeant]);
 		}
 		break;
-		/*______________________________________________________________________________*/
-		/*								LE PHILO MANGE									*/
-		/*______________________________________________________________________________*/
+	/*___________________________________________________________________*/
+	/*                            LE PHILO MANGE                         */
+	/*___________________________________________________________________*/
 	case P_MANGE:
 		{
 			setPhiloState(idPhilosopheChangeant,nouvelEtat);
@@ -247,31 +320,34 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 		}
 		break;
 
-		/*______________________________________________________________________________*/
-		/*								LE PHILO PENSE									*/
-		/*______________________________________________________________________________*/
-
+	/*___________________________________________________________________*/
+	/*                              LE PHILO PENSE                       */
+	/*___________________________________________________________________*/
 	case P_PENSE:
 		{
 			setPhiloState(idPhilosopheChangeant,nouvelEtat);
 			afficheStatePhilos(idPhilosopheChangeant);
+			/*incrément de philosophes qui viennent penser*/
+			pthread_mutex_lock(&mutex_cptrPense);
 			cptr_pense++;
-
+			/*Si assez de philosophes pensent (comme 2 groupes : NB_PHILOSOPHES\2*/
 			if(cptr_pense == (NB_PHILOSOPHES/2) ){
 				cptr_pense = 0;
+				/**/
 				if(idPhilosopheChangeant%2 == 0)
-					groupeQuiPeutManger = 1;
+					setGroupeQuiPeutManger(1);
 				else
-					groupeQuiPeutManger = 0;
+					setGroupeQuiPeutManger(0);
 
 				if(NB_PHILOSOPHES%2 && idPhilosopheChangeant%2 == 0){
-					if(excluded == NB_PHILOSOPHES-1)
-						excluded = 0;
-					else if(excluded == 0)
-						excluded = NB_PHILOSOPHES-1;
+					if(philosopheExcluSiImpair == NB_PHILOSOPHES-1)
+						philosopheExcluSiImpair = 0;
+					else if(philosopheExcluSiImpair == 0)
+						philosopheExcluSiImpair = NB_PHILOSOPHES-1;
 				}
 				pthread_cond_broadcast(&run_cond);
 			}
+			pthread_mutex_unlock(&mutex_cptrPense);
 		}
 		break;
 	default:
@@ -282,13 +358,17 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 	}
 }
 
-
+/*@brief fonction appelée lors de la réception d'un SIGINT ou SIGTERM;
+ * Détruit tous les objets POSIX, libération des allocations dynamiques et termine les threads
+ * @return void
+ * */
 void terminerProgramme()
 {
     int i;
     int sem_value;
     sem_destroy(&semSynchroThreadsPhilos);
     sem_getvalue(&semSynchroThreadsPhilos, &sem_value);
+
 	if( sem_value == 0)
 	{
 		std::cout << "[INFO] Semaphore synchro not posted value = " << sem_value << std::endl;
@@ -303,8 +383,10 @@ void terminerProgramme()
 		std::cout << "[WARNING] semaphore synchro error during destroy() " << strerror(errno) <<std::endl;
 
 	for(i=0;i<NB_PHILOSOPHES;i++){
-		pthread_mutex_destroy(&mutex_Eat_Philosophes[i]);
+		pthread_mutex_destroy(&mutex_run_thread_eat[i]);
 	}
+	pthread_cond_destroy(&run_cond);
+
 	for(i=0;i<NB_PHILOSOPHES;i++){
 
 		sem_getvalue(semFourchettes[i], &sem_value);

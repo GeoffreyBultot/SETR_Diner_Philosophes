@@ -6124,3 +6124,1198 @@ Invoking: GCC C++ Linker
 g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
 Finished building target: DinerPhilosophesSoluton2
  
+16:05:33 **** Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+16:05:39 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+16:06:03 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:133:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  133 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+16:06:08 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+16:48:20 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+16:48:22 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:139:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  139 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+16:54:03 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+16:54:04 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:139:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  139 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+16:55:48 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+16:55:49 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:139:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  139 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+16:56:16 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+16:56:17 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:139:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  139 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:05:33 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:05:34 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:139:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  139 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:17:49 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:17:51 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:139:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  139 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:19:25 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:19:27 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:139:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  139 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:24:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:24:55 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:26:18 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:26:19 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+../src/SolutionEtudiant.cpp: In function ‘void actualiserEtAfficherEtatsPhilosophes(int, char)’:
+../src/SolutionEtudiant.cpp:267:33: error: lvalue required as left operand of assignment
+  267 |    if(idPhilosopheChangeant%2 = groupeQuiPeutManger)
+      |                                 ^~~~~~~~~~~~~~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+17:26:25 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:26:27 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:32:07 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:32:08 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:36:21 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:36:22 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:36:48 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:36:50 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:42:44 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:42:45 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:44:55 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:44:57 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:45:12 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:45:13 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:49:36 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:49:37 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:51:22 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:51:23 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:52:28 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:52:30 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:144:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  144 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:53:31 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:53:32 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:139:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  139 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+17:57:44 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+17:57:45 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:139:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  139 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+18:05:11 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:05:12 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:139:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  139 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+18:17:15 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:17:17 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:139:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  139 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+18:25:49 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:25:50 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:151:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  151 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+18:27:29 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+18:27:31 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:151:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  151 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+18:37:13 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:81:24: error: ‘mutex_run_thread_eat’ was not declared in this scope
+   81 |    pthread_mutex_lock(&mutex_run_thread_eat[i]);
+      |                        ^~~~~~~~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp:82:4: error: ‘run_thread_eat’ was not declared in this scope
+   82 |    run_thread_eat[i] = false;
+      |    ^~~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:131:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  131 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:37:15 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+18:37:48 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:88:24: error: ‘mutex_run_thread_eat’ was not declared in this scope; did you mean ‘run_thread_eat’?
+   88 |    pthread_mutex_lock(&mutex_run_thread_eat[i]);
+      |                        ^~~~~~~~~~~~~~~~~~~~
+      |                        run_thread_eat
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:135:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  135 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:37:49 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+18:39:25 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:135:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  135 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:39:27 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+18:45:49 **** Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:135:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  135 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+18:46:00 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/DinerPhilosophes.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/DinerPhilosophes.d" -MT"src/DinerPhilosophes.o" -o "src/DinerPhilosophes.o" "../src/DinerPhilosophes.cpp"
+Finished building: ../src/DinerPhilosophes.cpp
+ 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:151:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  151 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+20:42:43 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+20:42:45 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+20:45:19 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+20:45:20 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+20:53:18 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+20:53:19 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:153:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  153 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+20:54:38 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+20:54:40 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:163:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  163 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+20:59:20 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+20:59:22 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:168:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  168 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+../src/SolutionEtudiant.cpp: In function ‘void terminerProgramme()’:
+../src/SolutionEtudiant.cpp:355:26: error: ‘mutex_Eat_Philosophes’ was not declared in this scope; did you mean ‘etatsPhilosophes’?
+  355 |   pthread_mutex_destroy(&mutex_Eat_Philosophes[i]);
+      |                          ^~~~~~~~~~~~~~~~~~~~~
+      |                          etatsPhilosophes
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:59:48 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+20:59:50 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:168:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  168 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+../src/SolutionEtudiant.cpp: In function ‘void terminerProgramme()’:
+../src/SolutionEtudiant.cpp:355:25: error: cannot convert ‘pthread_mutexattr_t*’ to ‘pthread_mutex_t*’
+  355 |   pthread_mutex_destroy(&mutexattr_run_thread_eat[i]);
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                         |
+      |                         pthread_mutexattr_t*
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/ios_base.h:39,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from ../src/SolutionEtudiant.cpp:1:
+/usr/include/pthread.h:730:52: note:   initializing argument 1 of ‘int pthread_mutex_destroy(pthread_mutex_t*)’
+  730 | extern int pthread_mutex_destroy (pthread_mutex_t *__mutex)
+      |                                   ~~~~~~~~~~~~~~~~~^~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:01:05 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:01:06 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:169:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  169 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+../src/SolutionEtudiant.cpp: In function ‘void terminerProgramme()’:
+../src/SolutionEtudiant.cpp:357:25: error: cannot convert ‘pthread_mutexattr_t*’ to ‘pthread_mutex_t*’
+  357 |   pthread_mutex_destroy(&mutexattr_run_thread_eat[i]);
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                         |
+      |                         pthread_mutexattr_t*
+In file included from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h:35,
+                 from /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:148,
+                 from /usr/include/c++/9/ext/atomicity.h:35,
+                 from /usr/include/c++/9/bits/ios_base.h:39,
+                 from /usr/include/c++/9/ios:42,
+                 from /usr/include/c++/9/ostream:38,
+                 from /usr/include/c++/9/iostream:39,
+                 from ../src/SolutionEtudiant.cpp:1:
+/usr/include/pthread.h:730:52: note:   initializing argument 1 of ‘int pthread_mutex_destroy(pthread_mutex_t*)’
+  730 | extern int pthread_mutex_destroy (pthread_mutex_t *__mutex)
+      |                                   ~~~~~~~~~~~~~~~~~^~~~~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:01:44 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:01:45 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:169:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  169 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:02:29 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:02:30 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:169:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  169 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:03:08 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:03:10 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:169:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  169 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:03:37 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:03:38 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:167:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  167 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:03:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:03:54 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:167:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  167 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:26:09 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:146:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  146 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:26:12 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:175:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  175 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:28:28 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:82:53: error: ‘mutexattr_run_thread_eat’ was not declared in this scope; did you mean ‘mutex_run_thread_eat’?
+   82 |   if( pthread_mutex_init(&mutex_run_thread_eat[i], &mutexattr_run_thread_eat[i]) == 0)//Fourchettes lachees par defaut
+      |                                                     ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     mutex_run_thread_eat
+../src/SolutionEtudiant.cpp:86:3: error: ‘setPhiloState’ was not declared in this scope
+   86 |   setPhiloState(i,P_PENSE);
+      |   ^~~~~~~~~~~~~
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:161:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  161 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:28:29 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:176:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  176 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:30:32 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:83:53: error: ‘mutexattr_run_thread_eat’ was not declared in this scope; did you mean ‘mutexattd_run_thread_eat’?
+   83 |   if( pthread_mutex_init(&mutex_run_thread_eat[i], &mutexattr_run_thread_eat[i]) == 0)//Fourchettes lachees par defaut
+      |                                                     ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     mutexattd_run_thread_eat
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:162:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  162 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:30:34 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:30:49 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:162:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  162 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:30:51 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:31:34 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:162:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  162 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:31:37 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:34:08 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:169:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  169 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:34:10 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:36:05 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:147:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  147 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:36:08 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:37:17 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void initialisation()’:
+../src/SolutionEtudiant.cpp:82:53: error: ‘mutexattr_run_thread_eat’ was not declared in this scope; did you mean ‘mutex_run_thread_eat’?
+   82 |   if( pthread_mutex_init(&mutex_run_thread_eat[i], &mutexattr_run_thread_eat[i]) == 0)//Fourchettes lachees par defaut
+      |                                                     ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     mutex_run_thread_eat
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:173:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  173 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+make: *** [src/subdir.mk:23 : src/SolutionEtudiant.o] Erreur 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:37:19 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:37:59 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:174:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  174 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:38:02 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:40:39 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:175:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  175 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:40:42 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:43:24 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:172:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  172 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:43:26 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:171:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  171 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
+21:45:17 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:172:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  172 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:45:19 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:45:58 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:172:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  172 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:46:01 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:46:53 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+make: rien à faire pour « all ».
+21:46:54 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:49:30 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:173:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  173 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:49:33 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+make: rien à faire pour « all ».
+21:51:41 **** Incremental Build of configuration Debug for project DinerPhilosophesSolution1 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSolution1/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:173:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  173 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSolution1
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSolution1"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSolution1
+ 
+21:51:44 **** Incremental Build of configuration Debug for project DinerPhilosophesSoluton2 ****
+make all 
+Building file: ../src/SolutionEtudiant.cpp
+Invoking: GCC C++ Compiler
+g++ -pthread -I"/home/bultot/Documents/SETR_Diner_Philosophes/DinerPhilosophesSoluton2/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SolutionEtudiant.d" -MT"src/SolutionEtudiant.o" -o "src/SolutionEtudiant.o" "../src/SolutionEtudiant.cpp"
+../src/SolutionEtudiant.cpp: In function ‘void* vieDuPhilosophe(void*)’:
+../src/SolutionEtudiant.cpp:171:7: warning: unused variable ‘diff’ [-Wunused-variable]
+  171 |   int diff = (t_second[id].tv_sec - t_first[id].tv_sec) * 1000000 + t_second[id].tv_usec - t_first[id].tv_usec;
+      |       ^~~~
+Finished building: ../src/SolutionEtudiant.cpp
+ 
+Building target: DinerPhilosophesSoluton2
+Invoking: GCC C++ Linker
+g++ -pthread  -o "DinerPhilosophesSoluton2"  ./src/DinerPhilosophes.o ./src/SolutionEtudiant.o   -lrt
+Finished building target: DinerPhilosophesSoluton2
+ 
