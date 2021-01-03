@@ -1,3 +1,22 @@
+/**
+ * @file SolutionEtudiant.cpp
+ * @brief
+ * @details
+ *
+ * - Company       	 		: ISIB
+ * - Project 	     		: Diner des philosophes
+ * - Creation 				: 2020
+ * - Author		 			: Bultot Geoffrey (gbultot@etu.he2b.be)
+ *   When | Who | What
+ *   ------- | ----- | -----
+ *   This file contain the resoltution of "dining philosophers problem" :
+ *   					- philosophe gesture for solution 2
+*/
+
+/***************************************************************************
+* Includes Directives
+***************************************************************************/
+
 #include <iostream>		//
 #include <ctime> 		// time_t time()
 #include <unistd.h> 	// entre autres : usleep
@@ -9,8 +28,11 @@
 #include "Header_Prof.h"
 #include <sys/time.h>	// gettimeOfTheDay
 
+/***************************************************************************
+* Variables declarations
+***************************************************************************/
 /*Sémaphore de synchronisation*/
-sem_t semSynchroThreadsPhilos;
+sem_t semSynchroPensePhilos;
 
 /*Mutexs pour protéger les variables:
  * Groupe qui peut manger
@@ -26,6 +48,9 @@ pthread_mutexattr_t pthread_attr_Cout;
 pthread_mutexattr_t pthread_attr_Etats;
 
 /*Tableau qui contient l'id des philosophes*/
+/*Ce tableau est alloué dynamiquement dans la fonction initialisation et est situé sur le tas.
+ * Le thread d'un philosophe prenant en paramètre un pointeur, il fallait lui passer une variable
+ * qui a un emplacement mémoire fixe et non un indie de boucle*/
 int * t_idx_philos;
 /*Philosophe qui sera exclu une fois sur deux si le nombre de philosophes est impair*/
 int philosopheExcluSiImpair = NB_PHILOSOPHES;
@@ -38,13 +63,15 @@ bool run_thread_eat[NB_PHILOSOPHES] = {false};
 /*Pour l'acquisition des temps caractéristiques*/
 struct timeval t_second[NB_PHILOSOPHES], t_first[NB_PHILOSOPHES];
 
-
-
 /*Mutex et conditions pour les attentes passives (faim) des philosophes*/
 pthread_mutexattr_t mutexattr_run_thread_eat[NB_PHILOSOPHES];
 pthread_mutex_t mutex_run_thread_eat[NB_PHILOSOPHES] = {PTHREAD_MUTEX_INITIALIZER};
 pthread_cond_t run_cond = PTHREAD_COND_INITIALIZER;
 
+
+/***************************************************************************
+* privates functions declarations
+***************************************************************************/
 /*Fonctions permettant d'écrire et de lire des variables en les protégeant avec des mutex */
 void setPhiloState(int idPhilo, char statePhilo);
 void afficheStatePhilos(int idPhilosopheChangeant);
@@ -52,6 +79,9 @@ void setGroupeQuiPeutManger(int groupe);
 int getGroupeQuiPeutManger();
 
 
+/***************************************************************************
+* Functions
+***************************************************************************/
 /*@brief cette fonction permet d'initiliser le Diner des philosophes
  * @return void*/
 void initialisation()
@@ -87,7 +117,7 @@ void initialisation()
 
 	/*semaphore permettant d'arrêter les philosophes dans leur état PENSE
 	 * Le sémaphore est pris par défaut et relâché après initialisation*/
-	if( sem_init( &semSynchroThreadsPhilos, 0, 0) == 0)
+	if( sem_init( &semSynchroPensePhilos, 0, 0) == 0)
 		std::cout << "[INFO] semaphore semSynchroThreadsPhilos initialized" << std::endl;
 	else
 		std::cout << "[WARNING] semaphore semSynchroThreadsPhilos not initialized " << std::endl;
@@ -111,7 +141,6 @@ void initialisation()
 			std::cout << "[INFO] semaphore Fourchette " <<i<<" initialized" << std::endl;
 		else
 			std::cout << "[WARNING] semaphore Fourchette " <<i<<" not initialized " << std::endl;
-		t_idx_philos[i] = i;
 	}
 
 	/*Personne n'a le droit de manger au départ*/
@@ -124,6 +153,9 @@ void initialisation()
 	/*Crée les threads représentant les philosophes*/
 	for(int i=0;i<NB_PHILOSOPHES;i++)
 	{
+		/*Sauvegarde de l'id du philosophe*/
+		t_idx_philos[i] = i;
+		/*Création du thread avec son id stocké dans t_idx_philos (sur le tas)*/
 		if(pthread_create( &threadsPhilosophes[i], &(pthread_attr_philosophes[i]), &vieDuPhilosophe, &(t_idx_philos[i])) == 0)
 			std::cout<<"[INFO] Thread philosophe " <<i<< " created"<<std::endl;
 		else
@@ -133,7 +165,7 @@ void initialisation()
 	instantDebut = time(NULL);
 
 	/*Libère les threads*/
-	sem_post(&semSynchroThreadsPhilos);
+	sem_post(&semSynchroPensePhilos);
 }
 
 /*@brief fonction qui crée un délais aléatoire entre f_min_sec et f_max_sec
@@ -162,12 +194,12 @@ void* vieDuPhilosophe(void* idPtr)
 	int gauche = id;
 	int droite = (id+1)%NB_PHILOSOPHES;
     pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
-    pthread_setcanceltype(PTHREAD_CANCEL_DEFERRED, NULL);
+    pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL);
     while(1)
     {
     	int value_sema = 0;
 		while(value_sema == 0)//Tant que le semaphore est pris
-			sem_getvalue(&semSynchroThreadsPhilos, &value_sema);
+			sem_getvalue(&semSynchroPensePhilos, &value_sema);
 		//gettimeofday(&t_first[id],NULL);
 		actualiserEtAfficherEtatsPhilosophes(id,P_FAIM);
 		//gettimeofday(&t_second[id],NULL);
@@ -179,14 +211,10 @@ void* vieDuPhilosophe(void* idPtr)
 		sem_wait(semFourchettes[droite]); //Acquisition fourchette droite
 		actualiserEtAfficherEtatsPhilosophes(id,P_MANGE);
 		randomDelay(0,DUREE_MANGE_MAX_S);
-		//usleep(DUREE_MANGE_MAX_S*1000000);
 		sem_post(semFourchettes[gauche]); //Relâchement fourchette gauche
 		sem_post(semFourchettes[droite]); //Relâchement fourchette droite
 		actualiserEtAfficherEtatsPhilosophes(id,P_PENSE);
 		randomDelay(0,DUREE_PENSE_MAX_S);
-		//usleep(DUREE_PENSE_MAX_S*1000000);
-
-        pthread_testcancel();
     }
     return NULL;
 }
@@ -345,9 +373,9 @@ void actualiserEtAfficherEtatsPhilosophes(int idPhilosopheChangeant, char nouvel
 					else if(philosopheExcluSiImpair == 0)
 						philosopheExcluSiImpair = NB_PHILOSOPHES-1;
 				}
-				pthread_cond_broadcast(&run_cond);
 			}
 			pthread_mutex_unlock(&mutex_cptrPense);
+			pthread_cond_broadcast(&run_cond);
 		}
 		break;
 	default:
@@ -366,26 +394,22 @@ void terminerProgramme()
 {
     int i;
     int sem_value;
-    sem_destroy(&semSynchroThreadsPhilos);
-    sem_getvalue(&semSynchroThreadsPhilos, &sem_value);
+    sem_destroy(&semSynchroPensePhilos);
+    sem_getvalue(&semSynchroPensePhilos, &sem_value);
 
 	if( sem_value == 0)
 	{
 		std::cout << "[INFO] Semaphore synchro not posted value = " << sem_value << std::endl;
-		std::cout<<"post return : " <<sem_post(&semSynchroThreadsPhilos);
-		sem_getvalue(&semSynchroThreadsPhilos, &sem_value);
+		std::cout<<"post return : " <<sem_post(&semSynchroPensePhilos);
+		sem_getvalue(&semSynchroPensePhilos, &sem_value);
 		std::cout <<"  new value : "<< sem_value<<std::endl;
 	}
 
-	if(sem_destroy(&semSynchroThreadsPhilos) != -1)
+	if(sem_destroy(&semSynchroPensePhilos) != -1)
 		std::cout << "[INFO] semaphore synchro destroyed correctly"<<std::endl;
 	else
 		std::cout << "[WARNING] semaphore synchro error during destroy() " << strerror(errno) <<std::endl;
 
-	for(i=0;i<NB_PHILOSOPHES;i++){
-		pthread_mutex_destroy(&mutex_run_thread_eat[i]);
-	}
-	pthread_cond_destroy(&run_cond);
 
 	for(i=0;i<NB_PHILOSOPHES;i++){
 
@@ -418,7 +442,11 @@ void terminerProgramme()
     	else
     		std::cout << "[WARNING] thread philosophe " << i << " error during join() "<< strerror(errno) <<std::endl;
     }
-    free(threadsPhilosophes);
+	for(i=0;i<NB_PHILOSOPHES;i++){
+		pthread_mutex_destroy(&mutex_run_thread_eat[i]);
+	}
+	pthread_cond_destroy(&run_cond);
+	free(threadsPhilosophes);
     free(semFourchettes);
     free(etatsPhilosophes);
     free(t_idx_philos);
