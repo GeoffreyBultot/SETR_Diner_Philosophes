@@ -40,6 +40,7 @@ sem_t semSynchroPensePhilos;
 /*Attributs (au besoin)*/
 pthread_attr_t pthread_attr_Sol1Scheduler;
 pthread_attr_t pthread_attr_philosophes[NB_PHILOSOPHES];
+pthread_mutexattr_t pthread_mutex_attr_cptrPense;
 pthread_mutexattr_t pthread_attr_Cout;
 pthread_mutexattr_t pthread_attr_Etats;
 pthread_mutexattr_t mutexattr_run_thread_eat[NB_PHILOSOPHES];
@@ -52,6 +53,14 @@ int philosopheExcluSiImpair = NB_PHILOSOPHES;
 bool run_thread_eat[NB_PHILOSOPHES] = {false};
 /*Pour l'acquisition des temps caractéristiques*/
 struct timeval t_second[NB_PHILOSOPHES], t_first[NB_PHILOSOPHES];
+/*Nombre de philosophes qui vont penser*/
+int cptr_pense = 0;
+
+/*Mutexs pour protéger les variables:
+ * Groupe qui peut manger
+ * Cptr_pense*/
+pthread_mutex_t mutex_GroupeQuiPeutManger;
+pthread_mutex_t mutex_cptrPense;
 
 /*Mutex et conditions pour les attentes passives (faim) des philosophes*/
 pthread_mutex_t mutex_run_thread_eat[NB_PHILOSOPHES] = {PTHREAD_MUTEX_INITIALIZER};
@@ -84,13 +93,15 @@ void initialisation()
 	/*Initialisation des mutexs*/
 	mutexCout = PTHREAD_MUTEX_INITIALIZER;
 	mutexEtats = PTHREAD_MUTEX_INITIALIZER;
-
+	mutex_cptrPense = PTHREAD_MUTEX_INITIALIZER;
+	pthread_mutex_init(&mutex_cptrPense, &pthread_mutex_attr_cptrPense);
 	pthread_mutex_init(&mutexCout, &pthread_attr_Cout);
 	pthread_mutex_init(&mutexEtats, &pthread_attr_Etats);
+
 	/*Si on a un nombre de philosophes impairs, le premier qui sera exclu sera le 0
 	 * Sinon, ce sera le N philosophe (donc aucun)*/
 	if(NB_PHILOSOPHES%2)
-		philosopheExcluSiImpair = 0;
+		philosopheExcluSiImpair = NB_PHILOSOPHES-1;
 	else
 		philosopheExcluSiImpair = NB_PHILOSOPHES;
 
@@ -201,7 +212,9 @@ void* vieDuPhilosophe(void* idPtr)
 		randomDelay(0,DUREE_MANGE_MAX_S);
 		sem_post(semFourchettes[gauche]); //Relâchement fourchette gauche
 		sem_post(semFourchettes[droite]); //Relâchement fourchette droite
-
+		pthread_mutex_lock(&mutex_cptrPense);
+		cptr_pense ++;
+		pthread_mutex_unlock(&mutex_cptrPense);
 		actualiserEtAfficherEtatsPhilosophes(id,P_PENSE);
 		randomDelay(0,DUREE_PENSE_MAX_S);
     }
@@ -264,14 +277,10 @@ void* Master_Scheduler(void* args)
 		pthread_cond_broadcast(&run_cond);
 
 		/*On attend qu'ils aient fini de manger*/
-		tousFiniDeManger = false;
-		while(tousFiniDeManger  == false){
-			tousFiniDeManger = true;
-			for(int i=GroupeQuiPeutManger;i<NB_PHILOSOPHES;i+=2){
-				if(etatsPhilosophes[i] == P_MANGE)
-					tousFiniDeManger = false;
-				}
-			}
+		while(cptr_pense < NB_PHILOSOPHES/2){}
+		pthread_mutex_lock(&mutex_cptrPense);
+		cptr_pense = 0;
+		pthread_mutex_unlock(&mutex_cptrPense);
 		/*Le groupe a mangé donc on peut switch de groupe*/
 		if(GroupeQuiPeutManger == 1){
 			GroupeQuiPeutManger = 0;
